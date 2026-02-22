@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
+const geistSans = IBM_Plex_Sans({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
@@ -23,10 +24,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="fixed right-10 top-8 z-50 flex items-center gap-6">
+          <a
+            href="#home"
+            className="text-sm font-semibold text-black transition-colors hover:text-[#005a00]"
+          >
+            Home
+          </a>
+          <a
+            href="#projects"
+            className="text-sm font-semibold text-black transition-colors hover:text-[#005a00]"
+          >
+            Projects
+          </a>
+        </div>
         {children}
       </body>
     </html>
