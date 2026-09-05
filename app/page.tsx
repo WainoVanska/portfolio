@@ -1,4 +1,13 @@
-import { BinaryField } from "../components/binary-field";
+const skills = [
+  { name: "Scala", mark: "SC" },
+  { name: "C", mark: "C" },
+  { name: "Python", mark: "PY" },
+  { name: "C++", mark: "C++" },
+  { name: "Figma", mark: "FG" },
+  { name: "Unity", mark: "UN" },
+  { name: "GLSL", mark: "GL" },
+  { name: "OpenGL 3.3 Core", mark: "OGL" },
+];
 
 function GitHubIcon() {
   return (
@@ -29,8 +38,6 @@ export default function Home() {
         Skip to content
       </a>
 
-      <BinaryField />
-
       <header className="site-header">
         <div className="header-inner shell">
           <div className="header-left">
@@ -60,6 +67,7 @@ export default function Home() {
           <nav className="site-nav" aria-label="Primary navigation">
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
           </nav>
         </div>
       </header>
@@ -148,6 +156,26 @@ export default function Home() {
               </div>
             </a>
           </div>
+        </section>
+
+        <section className="skills shell section" id="skills">
+          <div className="section-label">
+            <span>03</span> Skills
+          </div>
+
+          <ul className="skills-grid" aria-label="Technical skills">
+            {skills.map((skill, index) => (
+              <li className="skill-item" key={skill.name}>
+                <span className="skill-index">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="skill-mark" aria-hidden="true">
+                  {skill.mark}
+                </span>
+                <span className="skill-name">{skill.name}</span>
+              </li>
+            ))}
+          </ul>
         </section>
 
       </main>
