@@ -41,7 +41,7 @@ export default function Home() {
           <nav className="site-nav" aria-label="Primary navigation">
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
+            <a href="#skills">Competencies</a>
           </nav>
         </div>
       </header>
@@ -134,9 +134,9 @@ export default function Home() {
         </section>
 
         <section className="skills shell section" id="skills">
-          <SectionLabel number="03" title="Skills" />
+          <SectionLabel number="03" title="Competencies" />
 
-          <ul className="skills-grid" aria-label="Technical skills">
+          <ul className="skills-grid" aria-label="Technical competencies">
             {skills.map((skill) => (
               <li
                 className="skill-item"
