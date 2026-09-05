@@ -43,6 +43,8 @@ export default function Home() {
         Skip to content
       </a>
 
+      <div className="site-backdrop" aria-hidden="true" />
+
       <header className="site-header">
         <div className="header-inner shell">
           <div className="header-left">
@@ -138,7 +140,7 @@ export default function Home() {
               />
               <div className="project-overlay">
                 <div className="project-copy">
-                  <p className="project-meta">Solo project · 2026</p>
+                  <p className="project-meta">2026</p>
                   <h2 id="observatory-title">Observatory Scene</h2>
                   <p className="project-description" id="observatory-description">
                     A 16-week C++ and OpenGL renderer combining lighting, shadow

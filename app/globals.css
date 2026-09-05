@@ -24,6 +24,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   background: var(--bg);
   color: var(--text);
@@ -31,6 +32,49 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+.site-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(181, 239, 114, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(181, 239, 114, 0.026) 1px, transparent 1px),
+    radial-gradient(circle at 1px 1px, rgba(181, 239, 114, 0.11) 1px, transparent 1.5px);
+  background-size: 48px 48px, 48px 48px, 96px 96px;
+  opacity: 0.68;
+  mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%);
+}
+
+.site-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(154, 214, 87, 0.07), transparent 25%),
+    radial-gradient(circle at 78% 68%, rgba(154, 214, 87, 0.045), transparent 24%);
+  animation: backdrop-breathe 24s ease-in-out infinite alternate;
+}
+
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes backdrop-breathe {
+  from {
+    opacity: 0.55;
+    transform: translate3d(-1%, -0.5%, 0) scale(1);
+  }
+
+  to {
+    opacity: 0.9;
+    transform: translate3d(1%, 0.75%, 0) scale(1.04);
+  }
 }
 
 ::selection {
