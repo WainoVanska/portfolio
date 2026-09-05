@@ -42,6 +42,10 @@ a {
   text-decoration: none;
 }
 
+.text-accent {
+  color: var(--accent-strong);
+}
+
 section[id] {
   scroll-margin-top: 96px;
 }
@@ -527,9 +531,8 @@ img {
   width: 62px;
   height: 62px;
   object-fit: contain;
-  filter: grayscale(1) brightness(0) invert(0.9);
-  opacity: 0.82;
-  transition: filter 180ms ease, opacity 180ms ease, transform 180ms ease;
+  opacity: 0.94;
+  transition: opacity 180ms ease, transform 180ms ease;
 }
 
 .skill-logo-wide {
@@ -563,7 +566,6 @@ img {
 
 .skill-item:hover .skill-logo,
 .skill-item:focus-visible .skill-logo {
-  filter: grayscale(1) brightness(0) invert(1);
   opacity: 1;
   transform: translateY(-3px);
 }

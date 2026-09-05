@@ -86,8 +86,10 @@ export default function Home() {
             </p>
             <h1>Hello, I’m Wäinö Vänskä.</h1>
             <p className="hero-intro">
-              I’m a computer science student focused on real-time rendering,
-              graphics programming, and the systems that turn data into images.
+              I’m a <span className="text-accent">computer science student</span>{" "}
+              focused on <span className="text-accent">real-time rendering</span>,{" "}
+              <span className="text-accent">graphics programming</span>, and the
+              systems that turn data into images.
             </p>
             <div className="hero-actions" aria-label="Primary actions">
               <a className="button button-primary" href="#projects">
@@ -107,9 +109,11 @@ export default function Home() {
           </div>
           <div className="about-layout">
             <p>
-              I’m studying Computer Science at Aalto University with a minor in
-              Mathematics. Computer graphics is where the subjects I enjoy
-              most—systems, visual problem-solving, and applied math—meet.
+              I’m studying <span className="text-accent">Computer Science at Aalto University</span>{" "}
+              with a <span className="text-accent">minor in Mathematics</span>.{" "}
+              <span className="text-accent">Computer graphics</span> is where the
+              subjects I enjoy most—systems, visual problem-solving, and applied
+              math—meet.
             </p>
             <div className="about-links">
               <a
