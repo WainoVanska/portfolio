@@ -156,15 +156,12 @@ img {
 }
 
 .site-nav a,
-.about-links a,
 .site-footer a {
   transition: color 160ms ease;
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible,
-.about-links a:hover,
-.about-links a:focus-visible,
 .site-footer a:hover,
 .site-footer a:focus-visible {
   color: var(--accent-strong);
@@ -488,20 +485,6 @@ img {
   margin: 0;
   color: var(--muted);
   font-size: 1.05rem;
-}
-
-.about-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-  margin-top: 34px;
-}
-
-.about-links a {
-  padding-bottom: 3px;
-  border-bottom: 1px solid var(--line);
-  font-size: 0.9rem;
-  font-weight: 600;
 }
 
 .skills {

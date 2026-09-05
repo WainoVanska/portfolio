@@ -115,15 +115,6 @@ export default function Home() {
               subjects I enjoy most—systems, visual problem-solving, and applied
               math—meet.
             </p>
-            <div className="about-links">
-              <a
-                href="https://github.com/WainoVanska"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub <span aria-hidden="true">↗</span>
-              </a>
-            </div>
           </div>
         </section>
 
