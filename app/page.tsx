@@ -1,3 +1,25 @@
+function GitHubIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0 1 12 6.82a9.6 9.6 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"
+      />
+    </svg>
+  );
+}
+
+function LinkedInIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M5.2 7.6A2.1 2.1 0 1 0 5.2 3.4a2.1 2.1 0 0 0 0 4.2ZM3.4 20.6H7V9.2H3.4v11.4Zm5.7 0h3.6v-6.3c0-1.66.31-3.27 2.38-3.27 2.04 0 2.06 1.9 2.06 3.38v6.19h3.6v-6.98c0-3.43-.74-6.07-4.75-6.07-1.93 0-3.22 1.06-3.74 2.06h-.05V9.2H9.1v11.4Z"
+      />
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -6,23 +28,36 @@ export default function Home() {
       </a>
 
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Wäinö Vänskä, back to top">
-          WV
-        </a>
+        <div className="header-inner shell">
+          <div className="header-left">
+            <a className="brand" href="#top" aria-label="Wäinö Vänskä, back to top">
+              WV
+            </a>
+            <nav className="social-nav" aria-label="Social links">
+              <a
+                href="https://github.com/WainoVanska"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub profile"
+              >
+                <GitHubIcon />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/waino-vanska/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn profile"
+              >
+                <LinkedInIcon />
+              </a>
+            </nav>
+          </div>
 
-        <nav aria-label="Primary navigation">
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-        </nav>
-
-        <a
-          className="header-link"
-          href="https://github.com/WainoVanska"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitHub <span aria-hidden="true">↗</span>
-        </a>
+          <nav className="site-nav" aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+          </nav>
+        </div>
       </header>
 
       <main id="main-content">
@@ -59,31 +94,37 @@ export default function Home() {
           </div>
 
           <div className="project-grid">
-            <article
+            <a
               className="project-card"
-              tabIndex={0}
+              href="https://github.com/WainoVanska/graphics_learning_repository"
+              target="_blank"
+              rel="noreferrer"
               aria-labelledby="observatory-title"
+              aria-describedby="observatory-description"
             >
               <img
                 src="/media/observatory.png"
                 alt="The Observatory Scene: a brick room opening into space with a planet, asteroid ring, lights, and imported models"
               />
               <div className="project-overlay">
-                <p className="project-meta">Solo project · 2026</p>
-                <h2 id="observatory-title">Observatory Scene</h2>
-                <p className="project-description">
-                  A 16-week C++ and OpenGL renderer combining lighting, shadow
-                  maps, surface detail, HDR bloom, model loading, and instanced
-                  rendering in one interactive scene.
-                </p>
-                <ul className="project-tags" aria-label="Technologies used">
-                  <li>C++</li>
-                  <li>GLSL</li>
-                  <li>OpenGL 3.3</li>
-                  <li>Assimp</li>
-                </ul>
+                <div className="project-copy">
+                  <p className="project-meta">Solo project · 2026</p>
+                  <h2 id="observatory-title">Observatory Scene</h2>
+                  <p className="project-description" id="observatory-description">
+                    A 16-week C++ and OpenGL renderer combining lighting, shadow
+                    maps, surface detail, HDR bloom, model loading, and instanced
+                    rendering in one interactive scene.
+                  </p>
+                </div>
+                <div className="project-tools" aria-label="Technologies and repository">
+                  <span className="project-tool project-tool-primary">C++</span>
+                  <span className="project-tool">GLSL</span>
+                  <span className="project-tool project-repo">
+                    <GitHubIcon /> GitHub <span aria-hidden="true">↗</span>
+                  </span>
+                </div>
               </div>
-            </article>
+            </a>
           </div>
         </section>
 
