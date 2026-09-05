@@ -77,7 +77,7 @@ img {
   top: 0;
   z-index: 30;
   width: 100%;
-  min-height: 72px;
+  min-height: 80px;
   border-bottom: 1px solid rgba(42, 48, 42, 0.82);
   background: rgba(9, 11, 10, 0.92);
   backdrop-filter: blur(18px);
@@ -87,7 +87,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 72px;
+  min-height: 80px;
 }
 
 .header-left,
@@ -107,16 +107,16 @@ img {
 
 .social-nav a {
   display: grid;
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   place-items: center;
   color: var(--text);
   transition: color 160ms ease, transform 160ms ease;
 }
 
 .social-nav svg {
-  width: 21px;
-  height: 21px;
+  width: 24px;
+  height: 24px;
 }
 
 .social-nav a:hover,
@@ -140,7 +140,7 @@ img {
 .brand {
   width: fit-content;
   color: var(--accent-strong);
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.14em;
 }
@@ -148,7 +148,7 @@ img {
 .site-nav {
   gap: 32px;
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: 0.86rem;
 }
 
 .site-nav a,
@@ -167,12 +167,16 @@ img {
 }
 
 .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 220px);
+  align-items: center;
+  gap: clamp(44px, 7vw, 88px);
   padding-top: clamp(72px, 9vw, 118px);
   padding-bottom: clamp(72px, 9vw, 112px);
 }
 
 .hero-copy {
-  max-width: 1020px;
+  min-width: 0;
 }
 
 .eyebrow {
@@ -255,12 +259,30 @@ img {
   background: rgba(255, 255, 255, 0.05);
 }
 
+.hero-portrait {
+  width: 100%;
+  margin: 0;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #eef1f7;
+}
+
+.hero-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .section {
   padding-top: clamp(72px, 9vw, 112px);
 }
 
 .projects {
   border-top: 1px solid var(--line-soft);
+  padding-bottom: clamp(96px, 11vw, 144px);
 }
 
 .section-label {
@@ -417,7 +439,7 @@ img {
 }
 
 .about {
-  padding-bottom: clamp(96px, 11vw, 144px);
+  padding-bottom: 0;
 }
 
 .about-layout {
@@ -468,7 +490,7 @@ img {
 
   .site-header,
   .header-inner {
-    min-height: 64px;
+    min-height: 72px;
   }
 
   .header-left {
@@ -480,12 +502,19 @@ img {
   }
 
   .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
     padding-top: 72px;
     padding-bottom: 80px;
   }
 
   .hero h1 {
     font-size: clamp(3rem, 10.5vw, 4.25rem);
+  }
+
+  .hero-portrait {
+    order: -1;
+    width: 140px;
   }
 
   .project-grid {

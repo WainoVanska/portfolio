@@ -86,11 +86,44 @@ export default function Home() {
               </a>
             </div>
           </div>
+
+          <figure className="hero-portrait">
+            <img src="/media/waino-vanska.jpg" alt="Portrait of Wäinö Vänskä" />
+          </figure>
+        </section>
+
+        <section className="about shell section" id="about">
+          <div className="section-label">
+            <span>01</span> About
+          </div>
+          <div className="about-layout">
+            <p>
+              I’m studying Computer Science at Aalto University with a minor in
+              Mathematics. Computer graphics is where the subjects I enjoy
+              most—systems, visual problem-solving, and applied math—meet.
+            </p>
+            <div className="about-links">
+              <a
+                href="https://github.com/WainoVanska"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/waino-vanska/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
         </section>
 
         <section className="projects shell section" id="projects">
           <div className="section-label">
-            <span>01</span> Projects
+            <span>02</span> Projects
           </div>
 
           <div className="project-grid">
@@ -128,34 +161,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="about shell section" id="about">
-          <div className="section-label">
-            <span>02</span> About
-          </div>
-          <div className="about-layout">
-            <p>
-              I’m studying Computer Science at Aalto University with a minor in
-              Mathematics. Computer graphics is where the subjects I enjoy
-              most—systems, visual problem-solving, and applied math—meet.
-            </p>
-            <div className="about-links">
-              <a
-                href="https://github.com/WainoVanska"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub <span aria-hidden="true">↗</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/waino-vanska/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
 
       <footer className="site-footer shell">
