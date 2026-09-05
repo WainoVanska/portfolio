@@ -11,6 +11,8 @@
   --accent: #9ad657;
   --accent-strong: #b5ef72;
   --shell: min(1180px, calc(100vw - 48px));
+  --font-sans: "IBM Plex Sans", Inter, Aptos, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
   --display-tech: Bahnschrift, "DIN Alternate", "Arial Narrow", sans-serif;
 }
 
@@ -28,7 +30,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "IBM Plex Sans", Inter, Aptos, "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -181,7 +183,7 @@ img {
 .project-meta,
 .project-tools,
 .site-footer {
-  font-family: ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-mono);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -597,7 +599,7 @@ img {
   padding: 3px 8px;
   color: #0b0e0b;
   background: var(--accent);
-  font-family: ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  font-family: var(--font-mono);
   font-size: 0.68rem;
   font-weight: 700;
   line-height: 1.35;

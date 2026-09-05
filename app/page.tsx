@@ -1,40 +1,7 @@
-const skills = [
-  { name: "Scala", icon: "/skills/scala.svg", label: "Scala 3" },
-  { name: "C", icon: "/skills/c.svg", label: "C17" },
-  { name: "Python", icon: "/skills/python.svg", label: "Python 3" },
-  { name: "C++", icon: "/skills/cplusplus.svg", label: "C++17" },
-  { name: "Figma", icon: "/skills/figma.svg", label: "Figma" },
-  { name: "Unity", icon: "/skills/unity.svg", label: "Unity" },
-  { name: "GLSL", wordmark: "GLSL", label: "GLSL 330" },
-  {
-    name: "OpenGL",
-    icon: "/skills/opengl.svg",
-    label: "OpenGL 3.3 Core",
-    wide: true,
-  },
-];
-
-function GitHubIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        fill="currentColor"
-        d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0 1 12 6.82a9.6 9.6 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"
-      />
-    </svg>
-  );
-}
-
-function LinkedInIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        fill="currentColor"
-        d="M5.2 7.6A2.1 2.1 0 1 0 5.2 3.4a2.1 2.1 0 0 0 0 4.2ZM3.4 20.6H7V9.2H3.4v11.4Zm5.7 0h3.6v-6.3c0-1.66.31-3.27 2.38-3.27 2.04 0 2.06 1.9 2.06 3.38v6.19h3.6v-6.98c0-3.43-.74-6.07-4.75-6.07-1.93 0-3.22 1.06-3.74 2.06h-.05V9.2H9.1v11.4Z"
-      />
-    </svg>
-  );
-}
+import Image from "next/image";
+import { GitHubIcon, LinkedInIcon } from "./components/icons";
+import { SectionLabel } from "./components/section-label";
+import { skills } from "./data/skills";
 
 export default function Home() {
   return (
@@ -101,14 +68,19 @@ export default function Home() {
           </div>
 
           <figure className="hero-portrait">
-            <img src="/media/waino-vanska.jpg" alt="Portrait of Wäinö Vänskä" />
+            <Image
+              src="/media/waino-vanska.jpg"
+              alt="Portrait of Wäinö Vänskä"
+              width={600}
+              height={600}
+              priority
+              unoptimized
+            />
           </figure>
         </section>
 
         <section className="about shell section" id="about">
-          <div className="section-label">
-            <span>01</span> About
-          </div>
+          <SectionLabel number="01" title="About" />
           <div className="about-layout">
             <p>
               I’m studying <span className="text-accent">Computer Science at Aalto University</span>{" "}
@@ -121,9 +93,7 @@ export default function Home() {
         </section>
 
         <section className="projects shell section" id="projects">
-          <div className="section-label">
-            <span>02</span> Projects
-          </div>
+          <SectionLabel number="02" title="Projects" />
 
           <div className="project-grid">
             <a
@@ -134,9 +104,12 @@ export default function Home() {
               aria-labelledby="observatory-title"
               aria-describedby="observatory-description"
             >
-              <img
+              <Image
                 src="/media/observatory.png"
                 alt="The Observatory Scene: a brick room opening into space with a planet, asteroid ring, lights, and imported models"
+                width={796}
+                height={632}
+                unoptimized
               />
               <div className="project-overlay">
                 <div className="project-copy">
@@ -161,9 +134,7 @@ export default function Home() {
         </section>
 
         <section className="skills shell section" id="skills">
-          <div className="section-label">
-            <span>03</span> Skills
-          </div>
+          <SectionLabel number="03" title="Skills" />
 
           <ul className="skills-grid" aria-label="Technical skills">
             {skills.map((skill) => (
@@ -174,10 +145,13 @@ export default function Home() {
                 aria-label={`${skill.name}: ${skill.label}`}
               >
                 {skill.icon ? (
-                  <img
+                  <Image
                     className={`skill-logo${skill.wide ? " skill-logo-wide" : ""}`}
                     src={skill.icon}
                     alt=""
+                    width={skill.wide ? 108 : 62}
+                    height={62}
+                    unoptimized
                     aria-hidden="true"
                   />
                 ) : (
@@ -192,7 +166,6 @@ export default function Home() {
             ))}
           </ul>
         </section>
-
       </main>
 
       <footer className="site-footer shell">
