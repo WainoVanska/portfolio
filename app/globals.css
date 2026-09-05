@@ -315,7 +315,6 @@ img {
 }
 
 .projects {
-  border-top: 1px solid var(--line-soft);
   padding-bottom: clamp(80px, 9vw, 112px);
 }
 
@@ -489,7 +488,6 @@ img {
 
 .skills {
   padding-bottom: clamp(96px, 11vw, 144px);
-  border-top: 1px solid var(--line-soft);
 }
 
 .skills-grid {
@@ -571,7 +569,6 @@ img {
   gap: 24px;
   padding-top: 26px;
   padding-bottom: 30px;
-  border-top: 1px solid var(--line);
   color: var(--quiet);
   font-size: 0.69rem;
 }
