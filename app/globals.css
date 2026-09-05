@@ -30,6 +30,36 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  isolation: isolate;
+}
+
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.binary-field {
+  position: fixed;
+  inset: 80px 0 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.42) 72%, transparent);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.42) 72%, transparent);
+}
+
+.binary-row {
+  position: absolute;
+  color: var(--accent);
+  font-family: ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  font-size: clamp(0.58rem, 0.7vw, 0.72rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.11em;
+  white-space: pre;
+  transition: opacity 240ms ease;
 }
 
 ::selection {
@@ -249,16 +279,6 @@ img {
   background: var(--accent-strong);
 }
 
-.button-secondary {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.button-secondary:hover,
-.button-secondary:focus-visible {
-  border-color: #586158;
-  background: rgba(255, 255, 255, 0.05);
-}
-
 .hero-portrait {
   width: 100%;
   margin: 0;
@@ -443,8 +463,8 @@ img {
 }
 
 .about-layout {
-  max-width: 700px;
-  margin-left: auto;
+  max-width: 760px;
+  margin-left: 0;
 }
 
 .about-layout > p {
@@ -521,9 +541,6 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .about-layout {
-    margin-left: 0;
-  }
 }
 
 @media (max-width: 620px) {

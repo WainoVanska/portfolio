@@ -1,3 +1,5 @@
+import { BinaryField } from "../components/binary-field";
+
 function GitHubIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -26,6 +28,8 @@ export default function Home() {
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
+
+      <BinaryField />
 
       <header className="site-header">
         <div className="header-inner shell">
@@ -72,17 +76,9 @@ export default function Home() {
               I’m a computer science student focused on real-time rendering,
               graphics programming, and the systems that turn data into images.
             </p>
-            <div className="hero-actions" aria-label="Profile links">
+            <div className="hero-actions" aria-label="Primary actions">
               <a className="button button-primary" href="#projects">
                 View projects <span aria-hidden="true">↓</span>
-              </a>
-              <a
-                className="button button-secondary"
-                href="https://www.linkedin.com/in/waino-vanska/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn <span aria-hidden="true">↗</span>
               </a>
             </div>
           </div>
@@ -109,13 +105,6 @@ export default function Home() {
                 rel="noreferrer"
               >
                 GitHub <span aria-hidden="true">↗</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/waino-vanska/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn <span aria-hidden="true">↗</span>
               </a>
             </div>
           </div>
