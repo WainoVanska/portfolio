@@ -10,8 +10,6 @@ export default function Home() {
         Skip to content
       </a>
 
-      <div className="site-backdrop" aria-hidden="true" />
-
       <header className="site-header">
         <div className="header-inner shell">
           <div className="header-left">
@@ -48,6 +46,8 @@ export default function Home() {
 
       <main id="main-content">
         <section className="hero shell" id="top">
+          <div className="hero-wireframe" aria-hidden="true" />
+
           <div className="hero-copy">
             <p className="eyebrow">
               <span className="live-dot" aria-hidden="true" />
