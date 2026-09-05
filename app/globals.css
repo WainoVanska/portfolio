@@ -11,6 +11,7 @@
   --accent: #9ad657;
   --accent-strong: #b5ef72;
   --shell: min(1180px, calc(100vw - 48px));
+  --display-tech: Bahnschrift, "DIN Alternate", "Arial Narrow", sans-serif;
 }
 
 * {
@@ -241,10 +242,12 @@ img {
 
 .hero h1 {
   margin: 0;
+  font-family: var(--display-tech);
   font-size: clamp(3.25rem, 5.6vw, 4.5rem);
-  font-weight: 500;
+  font-stretch: condensed;
+  font-weight: 350;
   line-height: 0.98;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.045em;
   white-space: nowrap;
 }
 
@@ -483,7 +486,12 @@ img {
 .about-layout > p {
   margin: 0;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-family: var(--display-tech);
+  font-size: 1.12rem;
+  font-stretch: semi-condensed;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1.55;
 }
 
 .skills {
