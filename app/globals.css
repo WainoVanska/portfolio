@@ -41,11 +41,11 @@ body {
   overflow: hidden;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(181, 239, 114, 0.026) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(181, 239, 114, 0.026) 1px, transparent 1px),
-    radial-gradient(circle at 1px 1px, rgba(181, 239, 114, 0.11) 1px, transparent 1.5px);
+    linear-gradient(rgba(181, 239, 114, 0.038) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(181, 239, 114, 0.038) 1px, transparent 1px),
+    radial-gradient(circle at 1px 1px, rgba(181, 239, 114, 0.145) 1px, transparent 1.5px);
   background-size: 48px 48px, 48px 48px, 96px 96px;
-  opacity: 0.68;
+  opacity: 0.76;
   mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%);
 }
 
