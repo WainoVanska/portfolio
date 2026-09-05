@@ -1,12 +1,17 @@
 const skills = [
-  { name: "Scala", mark: "SC" },
-  { name: "C", mark: "C" },
-  { name: "Python", mark: "PY" },
-  { name: "C++", mark: "C++" },
-  { name: "Figma", mark: "FG" },
-  { name: "Unity", mark: "UN" },
-  { name: "GLSL", mark: "GL" },
-  { name: "OpenGL 3.3 Core", mark: "OGL" },
+  { name: "Scala", icon: "/skills/scala.svg", label: "Scala 3" },
+  { name: "C", icon: "/skills/c.svg", label: "C17" },
+  { name: "Python", icon: "/skills/python.svg", label: "Python 3" },
+  { name: "C++", icon: "/skills/cplusplus.svg", label: "C++17" },
+  { name: "Figma", icon: "/skills/figma.svg", label: "Figma" },
+  { name: "Unity", icon: "/skills/unity.svg", label: "Unity" },
+  { name: "GLSL", wordmark: "GLSL", label: "GLSL 330" },
+  {
+    name: "OpenGL",
+    icon: "/skills/opengl.svg",
+    label: "OpenGL 3.3 Core",
+    wide: true,
+  },
 ];
 
 function GitHubIcon() {
@@ -164,15 +169,28 @@ export default function Home() {
           </div>
 
           <ul className="skills-grid" aria-label="Technical skills">
-            {skills.map((skill, index) => (
-              <li className="skill-item" key={skill.name}>
-                <span className="skill-index">
-                  {String(index + 1).padStart(2, "0")}
+            {skills.map((skill) => (
+              <li
+                className="skill-item"
+                key={skill.name}
+                tabIndex={0}
+                aria-label={`${skill.name}: ${skill.label}`}
+              >
+                {skill.icon ? (
+                  <img
+                    className={`skill-logo${skill.wide ? " skill-logo-wide" : ""}`}
+                    src={skill.icon}
+                    alt=""
+                    aria-hidden="true"
+                  />
+                ) : (
+                  <span className="skill-wordmark" aria-hidden="true">
+                    {skill.wordmark}
+                  </span>
+                )}
+                <span className="skill-tooltip" aria-hidden="true">
+                  {skill.label}
                 </span>
-                <span className="skill-mark" aria-hidden="true">
-                  {skill.mark}
-                </span>
-                <span className="skill-name">{skill.name}</span>
               </li>
             ))}
           </ul>
