@@ -549,7 +549,7 @@ img {
 }
 
 .about {
-  padding-bottom: 0;
+  padding-bottom: clamp(96px, 11vw, 144px);
 }
 
 .about-layout {
@@ -569,7 +569,7 @@ img {
 }
 
 .skills {
-  padding-bottom: clamp(96px, 11vw, 144px);
+  padding-bottom: 0;
 }
 
 .skill-groups {
