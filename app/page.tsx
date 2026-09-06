@@ -83,18 +83,17 @@ export default function Home() {
               I’m studying <span className="text-accent">Computer Science at Aalto University</span>{" "}
               with a <span className="text-accent">minor in Mathematics</span>.
               Before moving into technology, I spent the years from 13 to 23
-              immersed in <span className="text-accent">music and acting</span>,
-              which shaped the creative way I approach projects. I especially
-              enjoyed producing my own songs in <span className="text-accent">FL Studio</span>{" "}
-              and experimenting with software as a creative tool, but eventually
-              wanted to apply that curiosity to something more technical. I began
-              my studies in Information Technology and transferred to Computer
-              Science after my first year. In March 2026, I became interested in{" "}
-              <span className="text-accent">computer graphics</span>—the point where
-              programming, mathematics, and visual problem-solving came together
-              for me. Since then, I’ve focused on building a strong graphics
-              portfolio and deepening my understanding of{" "}
-              <span className="text-accent">real-time rendering</span>.
+              making <span className="text-accent">music and acting</span>, producing
+              my own songs in <span className="text-accent">FL Studio</span>, but
+              eventually wanted to apply that curiosity of creation to something
+              more technical. I’ve always wanted to create things and understand
+              how the technology behind them works, so I figured the next step was
+              learning programming. I began my studies in Information Technology
+              in 2025 and transferred to Computer Science after my first year. In
+              March 2026, I became interested in{" "}
+              <span className="text-accent">computer graphics</span>, and since then,
+              I’ve focused on building a strong portfolio and deepening my
+              understanding of the field.
             </p>
           </div>
         </section>
