@@ -85,14 +85,14 @@ export default function Home() {
               Before moving into technology, I spent the years from 13 to 23
               making <span className="text-accent">music and acting</span>, producing
               my own songs in <span className="text-accent">FL Studio</span>, but
-              eventually wanted to apply that curiosity of creation to something
+              eventually wanted to apply that passion of creation and learning to something
               more technical. I’ve always wanted to create things and understand
-              how the technology behind them works, so I figured the next step was
+              how the technology behind everything works, so I figured the next step was
               learning programming. I began my studies in Information Technology
               in 2025 and transferred to Computer Science after my first year. In
               March 2026, I became interested in{" "}
               <span className="text-accent">computer graphics</span>, and since then,
-              I’ve focused on building a strong portfolio and deepening my
+              I’ve focused on building a solid portfolio and deepening my
               understanding of the field.
             </p>
           </div>
