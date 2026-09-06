@@ -49,9 +49,9 @@ export default function Home() {
             <h1>Hello, I’m Wäinö Vänskä.</h1>
             <p className="hero-intro">
               I’m a <span className="text-accent">computer science student</span>{" "}
-              focused on <span className="text-accent">real-time rendering</span>,{" "}
-              <span className="text-accent">graphics programming</span>, and the
-              systems that turn data into images.
+              interested in <span className="text-accent">building software</span>,{" "}
+              <span className="text-accent">solving technical problems</span>, and
+              understanding how the systems behind everyday technology work.
             </p>
             <p className="eyebrow">
               <span className="live-dot" aria-hidden="true" />
