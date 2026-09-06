@@ -17,8 +17,8 @@ export default function Home() {
           </a>
 
           <nav className="site-nav" aria-label="Primary navigation">
-            <a href="#skills">Competencies</a>
             <a href="#projects">Projects</a>
+            <a href="#skills">Competencies</a>
             <a href="#about">About</a>
           </nav>
 
@@ -76,53 +76,8 @@ export default function Home() {
           </figure>
         </section>
 
-        <section className="skills shell section" id="skills">
-          <SectionLabel number="01" title="Competencies" />
-
-          <div className="skill-groups">
-            {skillGroups.map((group) => (
-              <section
-                className="skill-group"
-                key={group.id}
-                aria-labelledby={`skill-group-${group.id}`}
-              >
-                <h3 id={`skill-group-${group.id}`}>{group.name}</h3>
-                <ul className="skills-grid">
-                  {group.skills.map((skill) => (
-                    <li
-                      className="skill-item"
-                      key={skill.name}
-                      tabIndex={0}
-                      aria-label={`${skill.name}: ${skill.label}`}
-                    >
-                      {skill.icon ? (
-                        <Image
-                          className={`skill-logo${skill.wide ? " skill-logo-wide" : ""}`}
-                          src={skill.icon}
-                          alt=""
-                          width={skill.wide ? 108 : 62}
-                          height={62}
-                          unoptimized
-                          aria-hidden="true"
-                        />
-                      ) : (
-                        <span className="skill-wordmark" aria-hidden="true">
-                          {skill.wordmark}
-                        </span>
-                      )}
-                      <span className="skill-tooltip" aria-hidden="true">
-                        {skill.label}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            ))}
-          </div>
-        </section>
-
         <section className="projects shell section" id="projects">
-          <SectionLabel number="02" title="Projects" />
+          <SectionLabel number="01" title="Projects" />
 
           <div className="project-grid">
             <article className="project-entry">
@@ -182,6 +137,51 @@ export default function Home() {
                 </div>
               </section>
             </article>
+          </div>
+        </section>
+
+        <section className="skills shell section" id="skills">
+          <SectionLabel number="02" title="Competencies" />
+
+          <div className="skill-groups">
+            {skillGroups.map((group) => (
+              <section
+                className="skill-group"
+                key={group.id}
+                aria-labelledby={`skill-group-${group.id}`}
+              >
+                <h3 id={`skill-group-${group.id}`}>{group.name}</h3>
+                <ul className="skills-grid">
+                  {group.skills.map((skill) => (
+                    <li
+                      className="skill-item"
+                      key={skill.name}
+                      tabIndex={0}
+                      aria-label={`${skill.name}: ${skill.label}`}
+                    >
+                      {skill.icon ? (
+                        <Image
+                          className={`skill-logo${skill.wide ? " skill-logo-wide" : ""}`}
+                          src={skill.icon}
+                          alt=""
+                          width={skill.wide ? 108 : 62}
+                          height={62}
+                          unoptimized
+                          aria-hidden="true"
+                        />
+                      ) : (
+                        <span className="skill-wordmark" aria-hidden="true">
+                          {skill.wordmark}
+                        </span>
+                      )}
+                      <span className="skill-tooltip" aria-hidden="true">
+                        {skill.label}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
           </div>
         </section>
 
