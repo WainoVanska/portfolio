@@ -510,7 +510,10 @@ img {
 .skill-groups {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(42px, 6vw, 66px);
+  width: min(900px, 100%);
+  margin-inline: auto;
+  column-gap: 0;
+  row-gap: 18px;
 }
 
 .skill-group:first-child {
@@ -529,13 +532,15 @@ img {
 }
 
 .skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: clamp(30px, 6vw, 78px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.skill-group:first-child .skills-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .skill-item {
@@ -544,6 +549,7 @@ img {
   width: 112px;
   min-height: 118px;
   padding: 16px 8px 34px;
+  justify-self: center;
   place-items: center;
   outline-offset: -2px;
 }
@@ -668,6 +674,10 @@ img {
     grid-column: auto;
   }
 
+  .skill-group:first-child .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .hero h1 {
     white-space: normal;
   }
@@ -706,11 +716,7 @@ img {
   }
 
   .skill-groups {
-    gap: 38px;
-  }
-
-  .skills-grid {
-    gap: 18px;
+    row-gap: 30px;
   }
 }
 
