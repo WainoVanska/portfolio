@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { GitHubIcon, LinkedInIcon } from "./components/icons";
 import { SectionLabel } from "./components/section-label";
-import { skills } from "./data/skills";
+import { skillGroups } from "./data/skills";
 
 export default function Home() {
   return (
@@ -133,35 +133,46 @@ export default function Home() {
         <section className="skills shell section" id="skills">
           <SectionLabel number="03" title="Competencies" />
 
-          <ul className="skills-grid" aria-label="Technical competencies">
-            {skills.map((skill) => (
-              <li
-                className="skill-item"
-                key={skill.name}
-                tabIndex={0}
-                aria-label={`${skill.name}: ${skill.label}`}
+          <div className="skill-groups">
+            {skillGroups.map((group) => (
+              <section
+                className="skill-group"
+                key={group.id}
+                aria-labelledby={`skill-group-${group.id}`}
               >
-                {skill.icon ? (
-                  <Image
-                    className={`skill-logo${skill.wide ? " skill-logo-wide" : ""}`}
-                    src={skill.icon}
-                    alt=""
-                    width={skill.wide ? 108 : 62}
-                    height={62}
-                    unoptimized
-                    aria-hidden="true"
-                  />
-                ) : (
-                  <span className="skill-wordmark" aria-hidden="true">
-                    {skill.wordmark}
-                  </span>
-                )}
-                <span className="skill-tooltip" aria-hidden="true">
-                  {skill.label}
-                </span>
-              </li>
+                <h3 id={`skill-group-${group.id}`}>{group.name}</h3>
+                <ul className="skills-grid">
+                  {group.skills.map((skill) => (
+                    <li
+                      className="skill-item"
+                      key={skill.name}
+                      tabIndex={0}
+                      aria-label={`${skill.name}: ${skill.label}`}
+                    >
+                      {skill.icon ? (
+                        <Image
+                          className={`skill-logo${skill.wide ? " skill-logo-wide" : ""}`}
+                          src={skill.icon}
+                          alt=""
+                          width={skill.wide ? 108 : 62}
+                          height={62}
+                          unoptimized
+                          aria-hidden="true"
+                        />
+                      ) : (
+                        <span className="skill-wordmark" aria-hidden="true">
+                          {skill.wordmark}
+                        </span>
+                      )}
+                      <span className="skill-tooltip" aria-hidden="true">
+                        {skill.label}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
             ))}
-          </ul>
+          </div>
         </section>
       </main>
 
