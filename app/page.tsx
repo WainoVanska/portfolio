@@ -12,48 +12,45 @@ export default function Home() {
 
       <header className="site-header">
         <div className="header-inner shell">
-          <div className="header-left">
-            <a className="brand" href="#top" aria-label="Wäinö Vänskä, back to top">
-              WV
-            </a>
-            <nav className="social-nav" aria-label="Social links">
-              <a
-                href="https://github.com/WainoVanska"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub profile"
-              >
-                <GitHubIcon />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/waino-vanska/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn profile"
-              >
-                <LinkedInIcon />
-              </a>
-            </nav>
-          </div>
+          <a className="brand" href="#top" aria-label="Wäinö Vänskä, back to top">
+            WV
+          </a>
 
           <nav className="site-nav" aria-label="Primary navigation">
-            <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Competencies</a>
+            <a href="#about">About</a>
+          </nav>
+
+          <nav className="social-nav" aria-label="Social links">
+            <a
+              href="https://github.com/WainoVanska"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub profile"
+            >
+              <GitHubIcon />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/waino-vanska/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn profile"
+            >
+              <LinkedInIcon />
+            </a>
           </nav>
         </div>
       </header>
 
       <main id="main-content">
         <section className="hero shell" id="top">
-          <div className="hero-wireframe" aria-hidden="true" />
-
           <div className="hero-copy">
+            <h1>Hello, I’m Wäinö Vänskä.</h1>
             <p className="eyebrow">
               <span className="live-dot" aria-hidden="true" />
               Aalto University · Helsinki
             </p>
-            <h1>Hello, I’m Wäinö Vänskä.</h1>
             <p className="hero-intro">
               I’m a <span className="text-accent">computer science student</span>{" "}
               focused on <span className="text-accent">real-time rendering</span>,{" "}
