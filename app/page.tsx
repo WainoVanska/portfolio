@@ -68,8 +68,8 @@ export default function Home() {
             <Image
               src="/media/waino-vanska.jpg"
               alt="Portrait of Wäinö Vänskä"
-              width={600}
-              height={600}
+              fill
+              sizes="(max-width: 820px) 160px, 280px"
               priority
               unoptimized
             />

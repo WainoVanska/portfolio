@@ -169,7 +169,7 @@ img {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(180px, 220px);
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 280px);
   align-items: center;
   gap: clamp(44px, 7vw, 88px);
   padding-top: clamp(72px, 9vw, 118px);
@@ -300,6 +300,7 @@ img {
 }
 
 .hero-portrait {
+  position: relative;
   width: 100%;
   margin: 0;
   aspect-ratio: 1;
@@ -656,7 +657,7 @@ img {
 
   .hero-portrait {
     order: -1;
-    width: 140px;
+    width: 160px;
   }
 
   .project-grid {
