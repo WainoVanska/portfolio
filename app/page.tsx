@@ -130,22 +130,24 @@ export default function Home() {
               </a>
 
               <section className="project-writeup" aria-labelledby="observatory-writeup-title">
-                <h3 id="observatory-writeup-title">Description</h3>
-                <p>
-                  Observatory Scene is a real-time OpenGL renderer I built over 16
-                  weeks to turn individual graphics exercises into one coherent
-                  interactive environment. Written in C++ and GLSL, it brings
-                  together model loading, multiple light types, directional and
-                  point shadows, normal and parallax mapping, transparency,
-                  instancing, HDR, bloom, and post-processing. Building it gave me
-                  a practical understanding of the complete rendering pipeline:
-                  how data moves from application code to shaders, how framebuffer
-                  passes compose an image, and where visual quality meets real-time
-                  performance. I also reorganized the code into clearer
-                  application, engine, and scene layers and moved the shader
-                  programs into dedicated files, making the renderer easier to
-                  extend as I continue experimenting with new techniques.
-                </p>
+                <div className="project-writeup-inner">
+                  <h3 id="observatory-writeup-title">Description</h3>
+                  <p>
+                    Observatory Scene is a real-time OpenGL renderer I built over 16
+                    weeks to turn individual graphics exercises into one coherent
+                    interactive environment. Written in C++ and GLSL, it brings
+                    together model loading, multiple light types, directional and
+                    point shadows, normal and parallax mapping, transparency,
+                    instancing, HDR, bloom, and post-processing. Building it gave me
+                    a practical understanding of the complete rendering pipeline:
+                    how data moves from application code to shaders, how framebuffer
+                    passes compose an image, and where visual quality meets real-time
+                    performance. I also reorganized the code into clearer
+                    application, engine, and scene layers and moved the shader
+                    programs into dedicated files, making the renderer easier to
+                    extend as I continue experimenting with new techniques.
+                  </p>
+                </div>
               </section>
             </article>
           </div>
