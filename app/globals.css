@@ -555,6 +555,9 @@ img {
 .about-layout {
   max-width: 760px;
   margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .about-layout > p {
