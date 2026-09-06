@@ -46,16 +46,15 @@ export default function Home() {
       <main id="main-content">
         <section className="hero shell" id="top">
           <div className="hero-copy">
-            <h1>Hello, I’m Wäinö Vänskä.</h1>
+            <h1>Wäinö Vänskä</h1>
             <p className="hero-intro">
-              I’m a <span className="text-accent">computer science student</span>{" "}
-              interested in <span className="text-accent">building software</span>,{" "}
-              <span className="text-accent">solving technical problems</span>, and
-              understanding how the systems behind everyday technology work.
+              I’m a <span className="text-accent">computer science student at Aalto University</span>{" "}
+              interested in <span className="text-accent">computer graphics</span> and{" "}
+              <span className="text-accent">low-level systems</span>.
             </p>
             <p className="eyebrow">
               <span className="live-dot" aria-hidden="true" />
-              Aalto University · Helsinki
+              Helsinki, Finland
             </p>
             <div className="hero-actions" aria-label="Primary actions">
               <a className="button button-primary" href="#projects">
@@ -192,8 +191,8 @@ export default function Home() {
               I’m studying <span className="text-accent">Computer Science at Aalto University</span>{" "}
               with a <span className="text-accent">minor in Mathematics</span>.
               Before moving into technology, I spent the years from 13 to 23
-              making <span className="text-accent">music and acting</span>, producing
-              my own songs in <span className="text-accent">FL Studio</span>, but
+              making music and acting, producing
+              my own songs in FL Studio, but
               eventually wanted to apply that passion of creation and learning to something
               more technical. I’ve always wanted to create things and understand
               how the technology behind everything works, so I figured the next step was
@@ -203,6 +202,9 @@ export default function Home() {
               <span className="text-accent">computer graphics</span>, and since then,
               I’ve focused on building a solid portfolio and deepening my
               understanding of the field.
+            </p>
+            <p>
+              On my freetime
             </p>
           </div>
         </section>
