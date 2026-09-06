@@ -81,10 +81,20 @@ export default function Home() {
           <div className="about-layout">
             <p>
               I’m studying <span className="text-accent">Computer Science at Aalto University</span>{" "}
-              with a <span className="text-accent">minor in Mathematics</span>.{" "}
-              <span className="text-accent">Computer graphics</span> is where the
-              subjects I enjoy most—systems, visual problem-solving, and applied
-              math—meet.
+              with a <span className="text-accent">minor in Mathematics</span>.
+              Before moving into technology, I spent the years from 13 to 23
+              immersed in <span className="text-accent">music and acting</span>,
+              which shaped the creative way I approach projects. I especially
+              enjoyed producing my own songs in <span className="text-accent">FL Studio</span>{" "}
+              and experimenting with software as a creative tool, but eventually
+              wanted to apply that curiosity to something more technical. I began
+              my studies in Information Technology and transferred to Computer
+              Science after my first year. In March 2026, I became interested in{" "}
+              <span className="text-accent">computer graphics</span>—the point where
+              programming, mathematics, and visual problem-solving came together
+              for me. Since then, I’ve focused on building a strong graphics
+              portfolio and deepening my understanding of{" "}
+              <span className="text-accent">real-time rendering</span>.
             </p>
           </div>
         </section>
