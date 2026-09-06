@@ -19,8 +19,8 @@ export const skillGroups: readonly SkillGroup[] = [
     skills: [
       { name: "Scala", icon: "/skills/scala.svg", label: "Scala 3" },
       { name: "C", icon: "/skills/c.svg", label: "C17" },
-      { name: "Python", icon: "/skills/python.svg", label: "Python 3" },
       { name: "C++", icon: "/skills/cplusplus.svg", label: "C++17" },
+      { name: "Python", icon: "/skills/python.svg", label: "Python 3" },
     ],
   },
   {

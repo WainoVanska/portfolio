@@ -509,7 +509,12 @@ img {
 
 .skill-groups {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(42px, 6vw, 66px);
+}
+
+.skill-group:first-child {
+  grid-column: 1 / -1;
 }
 
 .skill-group h3 {
@@ -655,6 +660,14 @@ img {
 }
 
 @media (max-width: 620px) {
+  .skill-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-group:first-child {
+    grid-column: auto;
+  }
+
   .hero h1 {
     white-space: normal;
   }
