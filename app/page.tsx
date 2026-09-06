@@ -17,9 +17,9 @@ export default function Home() {
           </a>
 
           <nav className="site-nav" aria-label="Primary navigation">
+            <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Competencies</a>
-            <a href="#about">About</a>
           </nav>
 
           <nav className="social-nav" aria-label="Social links">
@@ -47,15 +47,15 @@ export default function Home() {
         <section className="hero shell" id="top">
           <div className="hero-copy">
             <h1>Hello, I’m Wäinö Vänskä.</h1>
-            <p className="eyebrow">
-              <span className="live-dot" aria-hidden="true" />
-              Aalto University · Helsinki
-            </p>
             <p className="hero-intro">
               I’m a <span className="text-accent">computer science student</span>{" "}
               focused on <span className="text-accent">real-time rendering</span>,{" "}
               <span className="text-accent">graphics programming</span>, and the
               systems that turn data into images.
+            </p>
+            <p className="eyebrow">
+              <span className="live-dot" aria-hidden="true" />
+              Aalto University · Helsinki
             </p>
             <div className="hero-actions" aria-label="Primary actions">
               <a className="button button-primary" href="#projects">
