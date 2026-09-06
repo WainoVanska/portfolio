@@ -93,40 +93,61 @@ export default function Home() {
           <SectionLabel number="02" title="Projects" />
 
           <div className="project-grid">
-            <a
-              className="project-card"
-              href="https://github.com/WainoVanska/graphics_learning_repository"
-              target="_blank"
-              rel="noreferrer"
-              aria-labelledby="observatory-title"
-              aria-describedby="observatory-description"
-            >
-              <Image
-                src="/media/observatory.png"
-                alt="The Observatory Scene: a brick room opening into space with a planet, asteroid ring, lights, and imported models"
-                width={796}
-                height={632}
-                unoptimized
-              />
-              <div className="project-overlay">
-                <div className="project-copy">
-                  <p className="project-meta">2026</p>
-                  <h2 id="observatory-title">Observatory Scene</h2>
-                  <p className="project-description" id="observatory-description">
-                    A 16-week C++ and OpenGL renderer combining lighting, shadow
-                    maps, surface detail, HDR bloom, model loading, and instanced
-                    rendering in one interactive scene.
-                  </p>
+            <article className="project-entry">
+              <a
+                className="project-card"
+                href="https://github.com/WainoVanska/graphics_learning_repository"
+                target="_blank"
+                rel="noreferrer"
+                aria-labelledby="observatory-title"
+                aria-describedby="observatory-summary"
+              >
+                <Image
+                  src="/media/observatory.png"
+                  alt="The Observatory Scene: a brick room opening into space with a planet, asteroid ring, lights, and imported models"
+                  width={796}
+                  height={632}
+                  unoptimized
+                />
+                <div className="project-overlay">
+                  <div className="project-copy">
+                    <p className="project-meta">2026</p>
+                    <h2 id="observatory-title">Observatory Scene</h2>
+                    <p className="project-description" id="observatory-summary">
+                      A 16-week C++ and OpenGL renderer combining lighting, shadow
+                      maps, surface detail, HDR bloom, model loading, and instanced
+                      rendering in one interactive scene.
+                    </p>
+                  </div>
+                  <div className="project-tools" aria-label="Technologies and repository">
+                    <span className="project-tool project-tool-primary">C++</span>
+                    <span className="project-tool">GLSL</span>
+                    <span className="project-tool project-repo">
+                      <GitHubIcon /> GitHub <span aria-hidden="true">↗</span>
+                    </span>
+                  </div>
                 </div>
-                <div className="project-tools" aria-label="Technologies and repository">
-                  <span className="project-tool project-tool-primary">C++</span>
-                  <span className="project-tool">GLSL</span>
-                  <span className="project-tool project-repo">
-                    <GitHubIcon /> GitHub <span aria-hidden="true">↗</span>
-                  </span>
-                </div>
-              </div>
-            </a>
+              </a>
+
+              <section className="project-writeup" aria-labelledby="observatory-writeup-title">
+                <h3 id="observatory-writeup-title">Description</h3>
+                <p>
+                  Observatory Scene is a real-time OpenGL renderer I built over 16
+                  weeks to turn individual graphics exercises into one coherent
+                  interactive environment. Written in C++ and GLSL, it brings
+                  together model loading, multiple light types, directional and
+                  point shadows, normal and parallax mapping, transparency,
+                  instancing, HDR, bloom, and post-processing. Building it gave me
+                  a practical understanding of the complete rendering pipeline:
+                  how data moves from application code to shaders, how framebuffer
+                  passes compose an image, and where visual quality meets real-time
+                  performance. I also reorganized the code into clearer
+                  application, engine, and scene layers and moved the shader
+                  programs into dedicated files, making the renderer easier to
+                  extend as I continue experimenting with new techniques.
+                </p>
+              </section>
+            </article>
           </div>
         </section>
 

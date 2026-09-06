@@ -352,6 +352,10 @@ img {
   gap: 20px;
 }
 
+.project-entry {
+  min-width: 0;
+}
+
 .project-card {
   position: relative;
   display: block;
@@ -482,6 +486,41 @@ img {
 .project-repo svg {
   width: 15px;
   height: 15px;
+}
+
+.project-writeup {
+  width: calc(100% - 48px);
+  margin: 34px auto 0;
+}
+
+.project-writeup h3 {
+  margin: 0 0 14px;
+  color: var(--foreground);
+  font-family: var(--display-tech);
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  font-stretch: semi-condensed;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+.project-writeup h3::before {
+  content: "//";
+  margin-right: 10px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.7em;
+  letter-spacing: 0;
+}
+
+.project-writeup p {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--display-tech);
+  font-size: 1.02rem;
+  font-stretch: semi-condensed;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1.6;
 }
 
 .about {
@@ -664,6 +703,10 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .project-writeup {
+    width: min(100% - 32px, 620px);
+  }
+
 }
 
 @media (max-width: 620px) {
@@ -690,6 +733,11 @@ img {
 
   .project-overlay {
     padding: 26px 20px 72px;
+  }
+
+  .project-writeup {
+    width: 100%;
+    margin-top: 28px;
   }
 }
 
