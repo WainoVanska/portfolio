@@ -95,10 +95,13 @@ export default function Home() {
                   height={632}
                   unoptimized
                 />
+                <h2 className="project-static-title" id="observatory-title">
+                  Observatory Scene
+                </h2>
                 <div className="project-overlay">
                   <div className="project-copy">
                     <p className="project-meta">2026</p>
-                    <h2 id="observatory-title">Observatory Scene</h2>
+                    <h2 aria-hidden="true">Observatory Scene</h2>
                     <p className="project-description" id="observatory-summary">
                       A 16-week C++ and OpenGL renderer combining lighting, shadow
                       maps, surface detail, HDR bloom, model loading, and instanced
