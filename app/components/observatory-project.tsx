@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef, useState, type FocusEvent } from "react";
 import { GitHubIcon } from "./icons";
 
 export function ObservatoryProject() {
@@ -35,8 +35,20 @@ export function ObservatoryProject() {
     video.currentTime = 0;
   };
 
+  const handleBlur = (event: FocusEvent<HTMLElement>) => {
+    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+      stopVideo();
+    }
+  };
+
   return (
-    <article className="project-entry">
+    <article
+      className="project-entry"
+      onPointerEnter={startVideo}
+      onPointerLeave={stopVideo}
+      onFocus={startVideo}
+      onBlur={handleBlur}
+    >
       <a
         className="project-card"
         href="https://github.com/WainoVanska/graphics_learning_repository"
@@ -44,10 +56,6 @@ export function ObservatoryProject() {
         rel="noreferrer"
         aria-labelledby="observatory-title"
         aria-describedby="observatory-summary"
-        onPointerEnter={startVideo}
-        onPointerLeave={stopVideo}
-        onFocus={startVideo}
-        onBlur={stopVideo}
       >
         <div className="project-media" aria-hidden="true">
           <Image
