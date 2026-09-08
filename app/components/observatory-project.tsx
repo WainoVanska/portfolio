@@ -36,6 +36,18 @@ export function ObservatoryProject() {
     video.currentTime = 0;
   };
 
+  const startPointerVideo = () => {
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      startVideo();
+    }
+  };
+
+  const stopPointerVideo = () => {
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      stopVideo();
+    }
+  };
+
   const handleBlur = (event: FocusEvent<HTMLElement>) => {
     if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
       stopVideo();
@@ -97,8 +109,8 @@ export function ObservatoryProject() {
   return (
     <article
       className="project-entry"
-      onPointerEnter={startVideo}
-      onPointerLeave={stopVideo}
+      onPointerEnter={startPointerVideo}
+      onPointerLeave={stopPointerVideo}
       onFocus={startVideo}
       onBlur={handleBlur}
     >
