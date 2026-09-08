@@ -396,13 +396,29 @@ img {
   place-items: center;
   padding: clamp(24px, 4vw, 42px) clamp(24px, 4vw, 42px) 70px;
   text-align: center;
-  opacity: 0;
+  opacity: 1;
   transform: translateY(14px);
-  transition: opacity 240ms ease, transform 300ms ease;
+  transition: transform 300ms ease;
 }
 
 .project-copy {
   max-width: 500px;
+}
+
+.project-meta,
+.project-description,
+.project-tools {
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.project-card:hover .project-meta,
+.project-card:focus-visible .project-meta,
+.project-card:hover .project-description,
+.project-card:focus-visible .project-description,
+.project-card:hover .project-tools,
+.project-card:focus-visible .project-tools {
+  opacity: 1;
 }
 
 .project-card:hover::after,
@@ -437,6 +453,7 @@ img {
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.045em;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.9);
 }
 
 .project-description {
@@ -826,6 +843,12 @@ img {
 
   .project-card .project-overlay {
     transform: translateY(0);
+  }
+
+  .project-card .project-meta,
+  .project-card .project-description,
+  .project-card .project-tools {
+    opacity: 1;
   }
 
   .project-card > img {
