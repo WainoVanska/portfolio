@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { GitHubIcon, LinkedInIcon } from "./components/icons";
+import { ObservatoryProject } from "./components/observatory-project";
 import { SectionLabel } from "./components/section-label";
 import { skillGroups } from "./data/skills";
 
@@ -79,70 +80,7 @@ export default function Home() {
           <SectionLabel number="01" title="Projects" />
 
           <div className="project-grid">
-            <article className="project-entry">
-              <a
-                className="project-card"
-                href="https://github.com/WainoVanska/graphics_learning_repository"
-                target="_blank"
-                rel="noreferrer"
-                aria-labelledby="observatory-title"
-                aria-describedby="observatory-summary"
-              >
-                <Image
-                  src="/media/observatory.png"
-                  alt="The Observatory Scene: a brick room opening into space with a planet, asteroid ring, lights, and imported models"
-                  width={796}
-                  height={632}
-                  unoptimized
-                />
-                <h2 className="project-static-title" id="observatory-title">
-                  Observatory Scene
-                </h2>
-                <div className="project-overlay">
-                  <div className="project-copy">
-                    <p className="project-meta">2026</p>
-                    <h2 aria-hidden="true">Observatory Scene</h2>
-                    <p className="project-description" id="observatory-summary">
-                      A 16-week C++ and OpenGL renderer combining lighting, shadow
-                      maps, surface detail, HDR bloom, model loading, and instanced
-                      rendering in one interactive scene.
-                    </p>
-                  </div>
-                  <div className="project-tools" aria-label="Technologies and repository">
-                    <span className="project-tool project-tool-primary">C++</span>
-                    <span className="project-tool">GLSL</span>
-                    <span className="project-tool project-repo">
-                      <GitHubIcon /> GitHub <span aria-hidden="true">↗</span>
-                    </span>
-                  </div>
-                </div>
-              </a>
-
-              <section className="project-writeup" aria-labelledby="observatory-writeup-title">
-                <div className="project-writeup-inner">
-                  <h3 id="observatory-writeup-title">Description</h3>
-                  <p>
-                    Observatory Scene is a real-time OpenGL renderer I built over 16
-                    weeks to turn graphics exercises from the
-                    <a className="project-link" href="https://learnopengl.com/" target="_blank" rel="noopener noreferrer"> LearnOpenGL </a> 
-                    tutorials into one interactive scene. The project brings
-                    together model loading, multiple light types, directional and
-                    point shadows, normal and parallax mapping, transparency,
-                    instancing, HDR, bloom, and post-processing. 
-                  </p>
-
-                  <p>
-                    This project gave me a practical understanding of the complete rendering pipeline:
-                    how data moves from application code to shaders, how framebuffer
-                    passes create an image and how graphics rendering works in real-time. 
-                    The repository contains <a className="project-link" href="https://github.com/WainoVanska/graphics_learning_repository/tree/master/learning_log" 
-                    target="_blank" rel="noopener noreferrer"> weekly learning logs</a> where I documented 
-                    my learning progress, the struggles I faced and my thoughts on the project development.
-                  </p>
-                  
-                </div>
-              </section>
-            </article>
+            <ObservatoryProject />
           </div>
         </section>
 
