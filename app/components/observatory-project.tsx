@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState, type FocusEvent } from "react";
+import { useEffect, useRef, useState, type FocusEvent } from "react";
 import { GitHubIcon } from "./icons";
 
 export function ObservatoryProject() {
+  const cardRef = useRef<HTMLAnchorElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -41,6 +42,58 @@ export function ObservatoryProject() {
     }
   };
 
+  useEffect(() => {
+    const card = cardRef.current;
+    const video = videoRef.current;
+
+    if (!card || !video || typeof IntersectionObserver === "undefined") {
+      return;
+    }
+
+    const mobileQuery = window.matchMedia(
+      "(hover: none) and (pointer: coarse)"
+    );
+    const reducedMotionQuery = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+    const connection = (
+      navigator as Navigator & {
+        connection?: { saveData?: boolean };
+      }
+    ).connection;
+
+    if (
+      !mobileQuery.matches ||
+      reducedMotionQuery.matches ||
+      connection?.saveData
+    ) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.45) {
+          setIsPlaying(true);
+          void video.play().catch(() => {
+            setIsPlaying(false);
+          });
+          return;
+        }
+
+        setIsPlaying(false);
+        video.pause();
+      },
+      { threshold: [0, 0.45] }
+    );
+
+    observer.observe(card);
+
+    return () => {
+      observer.disconnect();
+      video.pause();
+    };
+  }, []);
+
   return (
     <article
       className="project-entry"
@@ -50,6 +103,7 @@ export function ObservatoryProject() {
       onBlur={handleBlur}
     >
       <a
+        ref={cardRef}
         className="project-card"
         href="https://github.com/WainoVanska/graphics_learning_repository"
         target="_blank"
