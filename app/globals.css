@@ -548,6 +548,19 @@ img {
   line-height: 1.6;
 }
 
+.project-writeup a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 160ms ease;
+}
+
+.project-writeup a:hover,
+.project-writeup a:focus-visible {
+  color: var(--text);
+}
+
 .about {
   padding-bottom: clamp(96px, 11vw, 144px);
 }

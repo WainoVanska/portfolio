@@ -50,7 +50,7 @@ export default function Home() {
             <p className="hero-intro">
               I’m a <span className="text-accent">computer science student at Aalto University</span>{" "}
               with a curiosity in <span className="text-accent">computer graphics</span> and{" "}
-              <span className="text-accent">low-level systems</span>.
+              <span className="text-accent">low-level programming</span>.
             </p>
             <p className="eyebrow">
               <span className="live-dot" aria-hidden="true" />
@@ -120,18 +120,16 @@ export default function Home() {
                   <h3 id="observatory-writeup-title">Description</h3>
                   <p>
                     Observatory Scene is a real-time OpenGL renderer I built over 16
-                    weeks to turn individual graphics exercises into one coherent
-                    interactive environment. Written in C++ and GLSL, it brings
+                    weeks to turn individual graphics exercises from 
+                    <a className="project-link" href="https://learnopengl.com/" target="_blank" rel="noopener noreferrer"> LearnOpenGL </a> 
+                    tutorials into one interactive environment. The project brings
                     together model loading, multiple light types, directional and
                     point shadows, normal and parallax mapping, transparency,
-                    instancing, HDR, bloom, and post-processing. Building it gave me
-                    a practical understanding of the complete rendering pipeline:
+                    instancing, HDR, bloom, and post-processing. This was my first graphics project 
+                    and it gave me a practical understanding of the complete rendering pipeline:
                     how data moves from application code to shaders, how framebuffer
-                    passes compose an image, and where visual quality meets real-time
-                    performance. I also reorganized the code into clearer
-                    application, engine, and scene layers and moved the shader
-                    programs into dedicated files, making the renderer easier to
-                    extend as I continue experimenting with new techniques.
+                    passes create an image, and where visual quality meets real-time
+                    performance. 
                   </p>
                 </div>
               </section>
@@ -196,7 +194,7 @@ export default function Home() {
             </p>
 
             <p>
-              Outside of my studies, I currently enjoy bouldering, going to the gym, and learning Japanese.
+              Outside of my studies, I enjoy bouldering, going to the gym, and learning Japanese.
             </p>
             {/*
               <p>
