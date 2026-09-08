@@ -120,17 +120,23 @@ export default function Home() {
                   <h3 id="observatory-writeup-title">Description</h3>
                   <p>
                     Observatory Scene is a real-time OpenGL renderer I built over 16
-                    weeks to turn individual graphics exercises from 
+                    weeks to turn graphics exercises from the
                     <a className="project-link" href="https://learnopengl.com/" target="_blank" rel="noopener noreferrer"> LearnOpenGL </a> 
-                    tutorials into one interactive environment. The project brings
+                    tutorials into one interactive scene. The project brings
                     together model loading, multiple light types, directional and
                     point shadows, normal and parallax mapping, transparency,
-                    instancing, HDR, bloom, and post-processing. This was my first graphics project 
-                    and it gave me a practical understanding of the complete rendering pipeline:
-                    how data moves from application code to shaders, how framebuffer
-                    passes create an image, and where visual quality meets real-time
-                    performance. 
+                    instancing, HDR, bloom, and post-processing. 
                   </p>
+
+                  <p>
+                    This project gave me a practical understanding of the complete rendering pipeline:
+                    how data moves from application code to shaders, how framebuffer
+                    passes create an image and how graphics rendering works in real-time. 
+                    The repository contains <a className="project-link" href="https://github.com/WainoVanska/graphics_learning_repository/tree/master/learning_log" 
+                    target="_blank" rel="noopener noreferrer"> weekly learning logs</a> where I documented 
+                    my learning progress, the struggles I faced and my thoughts on the project development.
+                  </p>
+                  
                 </div>
               </section>
             </article>

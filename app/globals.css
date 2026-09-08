@@ -548,6 +548,10 @@ img {
   line-height: 1.6;
 }
 
+.project-writeup p + p {
+  margin-top: 1.25rem;
+}
+
 .project-writeup a {
   color: var(--accent);
   font-weight: 600;
