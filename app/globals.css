@@ -554,8 +554,7 @@ img {
 }
 
 .project-information h4::before {
-  margin-right: 8px;
-  font-size: 0.78em;
+  content: none;
 }
 
 .project-information dl {
