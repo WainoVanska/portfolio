@@ -227,7 +227,7 @@ export function ObservatoryProject() {
           </p>
 
           <div className="project-information">
-            <h4>Information</h4>
+            <h4>Project details</h4>
             <dl>
               <div>
                 <dt>Duration</dt>
