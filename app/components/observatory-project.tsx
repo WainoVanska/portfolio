@@ -152,37 +152,30 @@ export function ObservatoryProject() {
 
           <div className="project-tools" aria-label="Technologies and repository">
             <span
-              className="project-tool project-tool-primary"
+              className="project-tech-icon"
               role="img"
               aria-label="C++"
               title="C++"
             >
               <Image
-                className="project-tech-logo project-tech-logo-square"
+                className="project-tech-logo"
                 src="/skills/cplusplus.svg"
                 alt=""
-                width={24}
-                height={24}
+                width={36}
+                height={36}
                 unoptimized
               />
             </span>
             <span
-              className="project-tool"
+              className="project-glsl-mark"
               role="img"
-              aria-label="OpenGL and GLSL"
-              title="OpenGL and GLSL"
+              aria-label="GLSL"
+              title="GLSL"
             >
-              <Image
-                className="project-tech-logo project-tech-logo-wide"
-                src="/skills/opengl.svg"
-                alt=""
-                width={54}
-                height={24}
-                unoptimized
-              />
+              GLSL
             </span>
             <span
-              className="project-tool project-repo"
+              className="project-repo"
               role="img"
               aria-label="Open GitHub repository"
               title="Open GitHub repository"
