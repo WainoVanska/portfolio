@@ -521,7 +521,8 @@ img {
   padding-top: 34px;
 }
 
-.project-writeup h3 {
+.project-writeup h3,
+.project-information h4 {
   margin: 0 0 14px;
   color: var(--foreground);
   font-family: var(--display-tech);
@@ -531,7 +532,8 @@ img {
   letter-spacing: -0.015em;
 }
 
-.project-writeup h3::before {
+.project-writeup h3::before,
+.project-information h4::before {
   content: "//";
   margin-right: 10px;
   color: var(--accent);
@@ -541,19 +543,7 @@ img {
 }
 
 .project-information {
-  margin: 0 0 1.8rem;
-  padding: 1.15rem 0;
-  border-top: 1px solid var(--line-soft);
-  border-bottom: 1px solid var(--line-soft);
-}
-
-.project-information h4 {
-  margin: 0 0 0.8rem;
-  color: var(--text);
-  font-family: var(--display-tech);
-  font-size: 1rem;
-  font-stretch: semi-condensed;
-  font-weight: 500;
+  margin: 2.5rem 0 0;
 }
 
 .project-information dl {
