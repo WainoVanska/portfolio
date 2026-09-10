@@ -191,35 +191,6 @@ export function ObservatoryProject() {
         <div className="project-writeup-inner">
           <h3 id="observatory-writeup-title">Description</h3>
 
-          <div className="project-information">
-            <h4>Information</h4>
-            <dl>
-              <div>
-                <dt>Duration</dt>
-                <dd>16 weeks during March–August 2026</dd>
-              </div>
-              <div>
-                <dt>Role</dt>
-                <dd>Graphics programmer</dd>
-              </div>
-              <div>
-                <dt>Languages</dt>
-                <dd>C++, GLSL</dd>
-              </div>
-              <div>
-                <dt>Technologies</dt>
-                <dd>OpenGL 3.3 Core, GLFW, GLAD, GLM, Assimp</dd>
-              </div>
-              <div>
-                <dt>Tools</dt>
-                <dd>Visual Studio, GitHub, vcpkg</dd>
-              </div>
-              <div>
-                <dt>Team</dt>
-                <dd>Solo project</dd>
-              </div>
-            </dl>
-          </div>
 
           <p id="observatory-summary">
             The Observatory is a real-time OpenGL renderer I built over 16 weeks
@@ -254,6 +225,36 @@ export function ObservatoryProject() {
             where I documented my learning progress, the struggles I faced and my
             thoughts on the project development.
           </p>
+
+          <div className="project-information">
+            <h4>Information</h4>
+            <dl>
+              <div>
+                <dt>Duration</dt>
+                <dd>16 weeks during March–August 2026</dd>
+              </div>
+              <div>
+                <dt>Role</dt>
+                <dd>Graphics programmer</dd>
+              </div>
+              <div>
+                <dt>Languages</dt>
+                <dd>C++, GLSL</dd>
+              </div>
+              <div>
+                <dt>Technologies</dt>
+                <dd>OpenGL 3.3 Core, GLFW, GLAD, GLM, Assimp</dd>
+              </div>
+              <div>
+                <dt>Tools</dt>
+                <dd>Visual Studio, GitHub, vcpkg</dd>
+              </div>
+              <div>
+                <dt>Team</dt>
+                <dd>Solo project</dd>
+              </div>
+            </dl>
+          </div>
         </div>
       </section>
     </article>
