@@ -832,11 +832,6 @@ img {
     gap: 0.65rem;
   }
 
-  .project-information dt,
-  .project-information dd {
-    font-size: 0.9rem;
-  }
-
   .project-entry:hover .project-writeup-inner,
   .project-entry:focus-within .project-writeup-inner {
     padding-top: 28px;
