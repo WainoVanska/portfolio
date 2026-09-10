@@ -546,6 +546,18 @@ img {
   margin: 2.5rem 0 0;
 }
 
+.project-information h4 {
+  margin-bottom: 12px;
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  font-weight: 500;
+  letter-spacing: 0.005em;
+}
+
+.project-information h4::before {
+  margin-right: 8px;
+  font-size: 0.78em;
+}
+
 .project-information dl {
   display: grid;
   gap: 0.35rem;
