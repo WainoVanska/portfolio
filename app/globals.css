@@ -453,12 +453,12 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 31px;
-  padding: 0 9px;
+  min-width: 42px;
+  min-height: 34px;
+  padding: 4px 8px;
   border: 1px solid rgba(114, 213, 114, 0.46);
   background: rgba(9, 11, 10, 0.82);
   color: #dce4da;
-  font-size: 0.75rem;
 }
 
 .project-tool-primary {
@@ -467,13 +467,36 @@ img {
   background: var(--accent);
 }
 
+.project-tech-logo {
+  display: block;
+  object-fit: contain;
+}
+
+.project-tech-logo-square {
+  width: 24px;
+  height: 24px;
+}
+
+.project-tech-logo-wide {
+  width: 54px;
+  height: 22px;
+}
+
 .project-repo {
+  min-width: 50px;
   gap: 6px;
 }
 
 .project-repo svg {
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
+}
+
+.external-link-arrow {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .project-writeup {
