@@ -562,7 +562,7 @@ img {
 .project-information dd {
   margin: 0;
   font-family: var(--display-tech);
-  font-size: 0.96rem;
+  font-size: 1.02rem;
   font-stretch: semi-condensed;
   line-height: 1.5;
 }
