@@ -193,8 +193,7 @@ export function ObservatoryProject() {
 
 
           <p id="observatory-summary">
-            The Observatory is a real-time OpenGL renderer I built over 16 weeks
-            to turn graphics exercises from the{" "}
+            The Observatory is a real-time OpenGL renderer I built from the{" "}
             <a
               className="project-link"
               href="https://learnopengl.com/"
@@ -203,14 +202,16 @@ export function ObservatoryProject() {
             >
               LearnOpenGL
             </a>{" "}
-            tutorials into one interactive space scene. The project brings together model
-            loading, multiple light types, directional and point shadows, normal and
-            parallax mapping, transparency, instancing, HDR, bloom, and
-            post-processing.
+            tutorials into one interactive space. Users can freely explore 
+            the scene in first person and play around with the lighting, 
+            post-processing, material and debugging features in a sandbox style 
+            setting. The scene includes model loading, multiple light types, 
+            directional and point shadows, normal and parallax mapping, 
+            transparency, instancing, HDR, bloom, and post-processing.
           </p>
 
           <p>
-            This project gave me a practical understanding of the complete rendering
+            This project gave me a practical understanding of the rendering
             pipeline: how data moves from application code to shaders, how
             framebuffer passes create an image and how graphics rendering works in
             real time. The repository contains{" "}
@@ -222,7 +223,7 @@ export function ObservatoryProject() {
             >
               weekly learning logs
             </a>{" "}
-            where I documented my learning progress, the struggles I faced and my
+            where I've documented my learning progress, the struggles I faced and my
             thoughts on the project development.
           </p>
 
