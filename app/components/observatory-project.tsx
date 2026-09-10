@@ -146,7 +146,7 @@ export function ObservatoryProject() {
 
         <div className="project-card-content">
           <div className="project-heading">
-            <h2 id="observatory-title">Observatory Scene</h2>
+            <h2 id="observatory-title">The Observatory</h2>
             <p className="project-subtitle">Real-Time OpenGL Renderer</p>
           </div>
 
@@ -164,7 +164,7 @@ export function ObservatoryProject() {
         <div className="project-writeup-inner">
           <h3 id="observatory-writeup-title">Description</h3>
           <p id="observatory-summary">
-            Observatory Scene is a real-time OpenGL renderer I built over 16 weeks
+            The Observatory is a real-time OpenGL renderer I built over 16 weeks
             to turn graphics exercises from the{" "}
             <a
               className="project-link"
@@ -174,7 +174,7 @@ export function ObservatoryProject() {
             >
               LearnOpenGL
             </a>{" "}
-            tutorials into one interactive scene. The project brings together model
+            tutorials into one interactive space scene. The project brings together model
             loading, multiple light types, directional and point shadows, normal and
             parallax mapping, transparency, instancing, HDR, bloom, and
             post-processing.
