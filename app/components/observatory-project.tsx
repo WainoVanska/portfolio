@@ -211,10 +211,7 @@ export function ObservatoryProject() {
           </p>
 
           <p>
-            This project gave me a practical understanding of the rendering
-            pipeline: how data moves from application code to shaders, how
-            framebuffer passes create an image and how graphics rendering works in
-            real time. The repository contains{" "}
+            The repository contains{" "}
             <a
               className="project-link"
               href="https://github.com/WainoVanska/graphics_learning_repository/tree/master/learning_log"
