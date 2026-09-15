@@ -117,7 +117,7 @@ export function ObservatoryProject() {
       <a
         ref={cardRef}
         className="project-card"
-        href="https://github.com/WainoVanska/graphics_learning_repository"
+        href="https://github.com/WainoVanska/The_Observatory"
         target="_blank"
         rel="noreferrer"
         aria-labelledby="observatory-title"
@@ -217,7 +217,7 @@ export function ObservatoryProject() {
             real time. The repository contains{" "}
             <a
               className="project-link"
-              href="https://github.com/WainoVanska/graphics_learning_repository/tree/master/learning_log"
+              href="https://github.com/WainoVanska/The_Observatory/tree/master/learning_log"
               target="_blank"
               rel="noopener noreferrer"
             >
