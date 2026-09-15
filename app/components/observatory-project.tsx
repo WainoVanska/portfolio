@@ -214,7 +214,7 @@ export function ObservatoryProject() {
             The repository contains{" "}
             <a
               className="project-link"
-              href="https://github.com/WainoVanska/The_Observatory/tree/master/learning_log"
+              href="https://github.com/WainoVanska/The_Observatory/tree/master/docs/learning-log"
               target="_blank"
               rel="noopener noreferrer"
             >
