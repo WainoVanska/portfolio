@@ -1,8 +1,6 @@
-# Wäinö Vänskä — Computer Graphics Portfolio
+# Wäinö Vänskä — Portfolio
 
-A graphics-programming portfolio designed to grow alongside my work. It currently features my real-time OpenGL learning project, the Observatory Scene.
-
-The site uses compact, image-led project cards with technical details revealed on hover, leaving room for future rendering, ray-tracing, and graphics projects.
+A personal portfolio website.
 
 ## Stack
 
