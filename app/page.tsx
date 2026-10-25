@@ -50,8 +50,8 @@ export default function Home() {
             <h1>Wäinö Vänskä</h1>
             <p className="hero-intro">
               I’m a <span className="text-accent">computer science student at Aalto University</span>{" "}
-              with a curiosity in <span className="text-accent">computer graphics</span> and{" "}
-              <span className="text-accent">low-level programming</span>.
+              with an interest in <span className="text-accent">computer graphics</span> and{" "}
+              <span className="text-accent">building interactive software</span>.
             </p>
             <p className="eyebrow">
               <span className="live-dot" aria-hidden="true" />
