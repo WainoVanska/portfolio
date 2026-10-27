@@ -1,0 +1,121 @@
+"use client";
+
+import { Fragment, useEffect, useRef } from "react";
+
+const name = "Wäinö Vänskä";
+const introduction = "I’m a computer science student at Aalto University with an interest in computer graphics and building user-friendly apps.";
+const words = introduction.split(" ");
+const settings = {
+  nameDuration: 1000,
+  gap: 150,
+  wordDuration: 110,
+  refresh: 110,
+};
+
+// Keep the same text cells before, during and after the reveal: replacing them
+// with a plain text node at the end changes font shaping and causes a snap.
+function TextWord({ text, accent = false }: { text: string; accent?: boolean }) {
+  return (
+    <span className="decode-word">
+      {Array.from(text).map((letter, index) => (
+        <span
+          className={`decode-cell${accent && letter !== "." ? " text-accent" : ""}`}
+          key={index}
+          data-digit="0"
+        >
+          <span className="decode-letter">{letter}</span>
+        </span>
+      ))}
+    </span>
+  );
+}
+
+export function HeroIntroduction() {
+  const nameRef = useRef<HTMLHeadingElement>(null);
+  const introRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const heading = nameRef.current;
+    const intro = introRef.current;
+    if (!heading || !intro) return;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const nameCells = Array.from(heading.querySelectorAll<HTMLElement>(".decode-cell"));
+    const sentenceWords = Array.from(intro.querySelectorAll<HTMLElement>(".decode-word"));
+    const sentenceCells = sentenceWords.map(word => Array.from(word.querySelectorAll<HTMLElement>(".decode-cell")));
+    let frame = 0;
+    let disposed = false;
+
+    function finish() {
+      cancelAnimationFrame(frame);
+      heading!.classList.remove("is-decoding");
+      intro!.classList.remove("is-decoding");
+    }
+
+    function start() {
+      if (disposed || motion.matches) return;
+      heading!.classList.add("is-decoding");
+      intro!.classList.add("is-decoding");
+      const startTime = performance.now();
+      const sentenceStart = settings.nameDuration + settings.gap;
+      const total = sentenceStart + sentenceWords.length * settings.wordDuration;
+      let lastTick = -1;
+
+      function draw(now: number) {
+        if (disposed) return;
+        const elapsed = now - startTime;
+        const tick = Math.floor(elapsed / settings.refresh);
+        nameCells.forEach((cell, index) => {
+          cell.classList.toggle("is-resolved", elapsed / settings.nameDuration >= (index + 1) / nameCells.length);
+          if (tick !== lastTick) cell.dataset.digit = String((tick * 7 + index * 3 + Math.floor(tick / 3)) % 10);
+        });
+        sentenceWords.forEach((word, index) => {
+          const progress = (elapsed - sentenceStart - index * settings.wordDuration) / settings.wordDuration;
+          word.classList.toggle("is-pending", progress < 0);
+          sentenceCells[index].forEach((cell, letter) => {
+            cell.classList.toggle("is-resolved", progress >= (letter + 1) / sentenceCells[index].length);
+            if (tick !== lastTick) cell.dataset.digit = String((tick * 3 + index * 7 + letter * 9 + Math.floor(tick / 2)) % 10);
+          });
+        });
+        lastTick = tick;
+        if (elapsed < total) frame = requestAnimationFrame(draw);
+        else finish();
+      }
+      frame = requestAnimationFrame(draw);
+    }
+
+    function onMotionChange() {
+      if (motion.matches) finish();
+    }
+    // Wait for font metrics so late font loading cannot shift the reveal.
+    void document.fonts.ready.then(start);
+    motion.addEventListener("change", onMotionChange);
+    return () => {
+      disposed = true;
+      finish();
+      motion.removeEventListener("change", onMotionChange);
+    };
+  }, []);
+
+  return (
+    <>
+      <h1 ref={nameRef} aria-label={name}>
+        <span aria-hidden="true">
+          {name.split(" ").map((word, index) => (
+            <Fragment key={index}>{index > 0 ? " " : null}<TextWord text={word} /></Fragment>
+          ))}
+        </span>
+      </h1>
+      <p className="hero-intro" ref={introRef}>
+        <span className="decode-accessible">{introduction}</span>
+        <span aria-hidden="true">
+          {words.map((word, index) => (
+            <Fragment key={index}>
+              {index > 0 ? " " : null}
+              <TextWord text={word} accent={index === 12 || index === 13 || index >= 15} />
+            </Fragment>
+          ))}
+        </span>
+      </p>
+    </>
+  );
+}

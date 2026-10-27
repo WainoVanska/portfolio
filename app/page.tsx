@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HeroIntroduction } from "./components/hero-introduction";
 import { SiteHeader } from "./components/site-header";
 import { ObservatoryProject } from "./components/observatory-project";
 import { SectionLabel } from "./components/section-label";
@@ -16,12 +17,7 @@ export default function Home() {
       <main id="main-content">
         <section className="hero shell" id="top">
           <div className="hero-copy">
-            <h1>Wäinö Vänskä</h1>
-            <p className="hero-intro">
-              I’m a computer science student at Aalto University{" "}
-              with an interest in <span className="text-accent">computer graphics</span> and{" "}
-              <span className="text-accent">building user-friendly apps</span>.
-            </p>
+            <HeroIntroduction />
             <p className="eyebrow">
               <span className="live-dot" aria-hidden="true" />
               Helsinki, Finland

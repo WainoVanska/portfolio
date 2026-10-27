@@ -100,6 +100,7 @@ Spacing should feel calm and deliberate. Avoid both cramped clusters and large e
 - In the introduction, highlight only “computer graphics” and “building user-friendly apps” in green; keep the education phrase muted.
 - The location indicator may use its subtle animated green signal.
 - The portrait stays compact and secondary to the introduction.
+- On entry, the name resolves from green digits (0–9) over 1000ms. After 150ms, the introduction resolves word by word at 110ms per word, with letters resolving left to right within each word. Digits change every 110ms at 50% green opacity; upcoming words use 30% of that intensity. Play once per page load, keep the portrait static, and show the finished copy immediately for reduced motion. Keep the text cells in place when finished so there is no final layout snap.
 - On smaller screens, the portrait moves above the copy and remains intentionally small.
 - Avoid adding extra CTAs, statistics, badges, slogans, or decorative background graphics without a clear request.
 
