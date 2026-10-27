@@ -69,7 +69,7 @@ Do not add multiple new typefaces or use heavy bold text as the main source of h
 
 - Use the shared `.shell` container.
 - Desktop content uses a maximum width of 1180px with 24px minimum side gutters.
-- At `820px` and below, side gutters become 16px and content is capped at 680px.
+- At `820px` and below, side gutters become 20px and content is capped at 680px. At `350px` and below, use 16px gutters.
 - Major sections use generous fluid top spacing through `clamp()`.
 - Keep the single-page order:
   1. Projects
@@ -85,7 +85,8 @@ Spacing should feel calm and deliberate. Avoid both cramped clusters and large e
 
 - The header remains sticky with a translucent near-black surface, subtle bottom border, and backdrop blur.
 - Keep the compact `WV` brand mark in green.
-- Primary navigation remains centered between the brand and social links.
+- On desktop, primary navigation remains centered between the brand and social links.
+- At `820px` and below, use a 64px header with WV, social links and a 44px menu button. The button opens a dropdown containing the three section links; close it on selection, Escape, outside press or focus leaving the header.
 - Navigation labels stay short: Projects, Competencies, About.
 - Social links use recognizable icons with accessible names.
 - Hover and focus may shift color to green and move by at most a few pixels.
@@ -95,10 +96,10 @@ Spacing should feel calm and deliberate. Avoid both cramped clusters and large e
 
 - The hero introduces Wäinö directly; it is not a marketing splash screen.
 - Keep the name, concise role statement, Helsinki location, single primary action, and portrait.
-- Green inline emphasis may highlight the university, graphics focus, and low-level programming.
+- The intro highlights only “computer graphics” and “building user-friendly apps” in green; the education phrase remains muted.
 - The location indicator may use its subtle animated green signal.
 - The portrait stays compact and secondary to the introduction.
-- On smaller screens, the portrait moves above the copy and remains intentionally small.
+- At `820px` and below, keep the name on one line beside a 64 × 76px portrait. Use a 54 × 64px portrait at `350px` and below. The intro, location and full-width action follow beneath, with compact spacing.
 - Avoid adding extra CTAs, statistics, badges, slogans, or decorative background graphics without a clear request.
 
 ## 7. Project presentation
@@ -127,8 +128,8 @@ Projects are the visual focus of the portfolio.
 ### Mobile
 
 - At `820px` and below, the project grid becomes one column.
-- At `620px` and below, the project card uses a 440px minimum height instead of a fixed aspect ratio.
-- On touch-first devices, project descriptions are visible without hover.
+- At `820px` and below, retain landscape `16 / 10` project previews, place the title/subtitle at the lower left and show technology/repository links beneath the media.
+- On mobile, a short project introduction is always visible and a native “Project details” disclosure contains the longer description and metadata. Desktop retains its hover/focus reveal.
 - Muted inline video begins when approximately 45% of the card is visible and pauses when it leaves that state.
 - Disable automatic playback for reduced-motion users and users with data-saving enabled.
 
@@ -148,7 +149,7 @@ New projects should reuse this structure unless the project's medium genuinely c
 
 - Group skills by meaningful category rather than presenting one undifferentiated logo wall.
 - Keep icons large enough to scan and use consistent visual weight.
-- Labels appear through the existing compact tooltip treatment on hover and keyboard focus.
+- On desktop, labels appear through the compact tooltip treatment on hover and keyboard focus. At `820px` and below, use always-visible text labels grouped by category instead of the logo grid.
 - Wordmarks are acceptable when a clean, legitimate icon is unavailable.
 - Do not add a competency merely because it appears in a dependency; it should represent something Wäinö can discuss and use.
 - Preserve keyboard access to each item.
@@ -223,3 +224,4 @@ When adding a new section or component:
 6. Update this guide when an approved decision becomes a reusable rule.
 
 A redesign, new theme, new site architecture, or materially different interaction pattern requires explicit user direction. Ordinary additions should look as though they were always part of this portfolio.
+

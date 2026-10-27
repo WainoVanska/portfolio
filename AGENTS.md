@@ -57,7 +57,7 @@ The current project interaction is deliberate:
 - Moving the pointer from the card into its description must keep the video playing.
 - Leaving the complete project entry pauses the video and resets it to the start.
 - Do not dim or scale the project image on hover.
-- On touch-first mobile devices, the description is always available and the muted inline video plays when roughly 45% of the card is visible, then pauses offscreen.
+- On mobile, a short introduction stays visible and native “Project details” expands the longer description and metadata. The muted inline video plays on touch-first devices when roughly 45% of the card is visible, then pauses offscreen.
 - Respect `prefers-reduced-motion` and data-saving mode.
 - New project cards should follow the same behavior unless their media or content requires an explicitly approved variation.
 
@@ -114,3 +114,4 @@ Do not claim that a check passed unless it was actually run.
 - Use focused, descriptive commit messages.
 - Never force-push unless the user explicitly requests it and the exact consequences are understood.
 - If a conflict could overwrite user work, stop and ask rather than guessing.
+

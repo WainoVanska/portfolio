@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { GitHubIcon, LinkedInIcon } from "./components/icons";
+import { SiteHeader } from "./components/site-header";
 import { ObservatoryProject } from "./components/observatory-project";
 import { SectionLabel } from "./components/section-label";
 import { skillGroups } from "./data/skills";
@@ -11,47 +11,16 @@ export default function Home() {
         Skip to content
       </a>
 
-      <header className="site-header">
-        <div className="header-inner shell">
-          <a className="brand" href="#top" aria-label="Wäinö Vänskä, back to top">
-            WV
-          </a>
-
-          <nav className="site-nav" aria-label="Primary navigation">
-            <a href="#projects">Projects</a>
-            <a href="#skills">Competencies</a>
-            <a href="#about">About</a>
-          </nav>
-
-          <nav className="social-nav" aria-label="Social links">
-            <a
-              href="https://github.com/WainoVanska"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub profile"
-            >
-              <GitHubIcon />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/waino-vanska/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn profile"
-            >
-              <LinkedInIcon />
-            </a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main id="main-content">
         <section className="hero shell" id="top">
           <div className="hero-copy">
             <h1>Wäinö Vänskä</h1>
             <p className="hero-intro">
-              I’m a <span className="text-accent">computer science student at Aalto University</span>{" "}
+              I’m a computer science student at Aalto University{" "}
               with an interest in <span className="text-accent">computer graphics</span> and{" "}
-              <span className="text-accent">building interactive software</span>.
+              <span className="text-accent">building user-friendly apps</span>.
             </p>
             <p className="eyebrow">
               <span className="live-dot" aria-hidden="true" />
@@ -69,7 +38,7 @@ export default function Home() {
               src="/media/waino-vanska.jpg"
               alt="Portrait of Wäinö Vänskä"
               fill
-              sizes="(max-width: 820px) 160px, 280px"
+              sizes="(max-width: 350px) 54px, (max-width: 820px) 64px, 280px"
               priority
               unoptimized
             />
@@ -118,6 +87,7 @@ export default function Home() {
                           {skill.wordmark}
                         </span>
                       )}
+                      <span className="skill-mobile-label" aria-hidden="true">{skill.name}</span>
                       <span className="skill-tooltip" aria-hidden="true">
                         {skill.label}
                       </span>
@@ -168,3 +138,4 @@ export default function Home() {
     </>
   );
 }
+

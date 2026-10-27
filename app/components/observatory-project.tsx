@@ -187,7 +187,47 @@ export function ObservatoryProject() {
         </div>
       </a>
 
-      <section className="project-writeup" aria-labelledby="observatory-writeup-title">
+      <div className="project-mobile">
+        <div className="mobile-project-tools" aria-label="Technologies and repository">
+          <span>C++</span><span>GLSL</span>
+          <a href="https://github.com/WainoVanska/The_Observatory" target="_blank" rel="noreferrer">
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <p className="mobile-project-summary">
+          A real-time OpenGL renderer built into an interactive space. Explore the
+          scene in first person and experiment with lighting, materials and post-processing.
+        </p>
+        <details className="mobile-project-details">
+          <summary>
+            Project details
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </summary>
+          <div className="mobile-project-body">
+            <p>
+              Built from the <a href="https://learnopengl.com/" target="_blank" rel="noreferrer">LearnOpenGL</a> tutorials.
+              The scene includes model loading, multiple light types, directional and point shadows,
+              normal and parallax mapping, transparency, instancing, HDR, bloom, and post-processing.
+            </p>
+            <p>
+              The repository includes <a href="https://github.com/WainoVanska/The_Observatory/tree/master/docs/learning-log" target="_blank" rel="noreferrer">weekly learning logs</a> documenting
+              my progress, struggles and thoughts on development.
+            </p>
+            <dl>
+              <div><dt>Duration</dt><dd>16 weeks, March–August 2026</dd></div>
+              <div><dt>Role</dt><dd>Graphics programmer</dd></div>
+              <div><dt>Languages</dt><dd>C++, GLSL</dd></div>
+              <div><dt>Technologies</dt><dd>OpenGL 3.3 Core, GLFW, GLAD, GLM, Assimp</dd></div>
+              <div><dt>Tools</dt><dd>Visual Studio, GitHub, vcpkg</dd></div>
+              <div><dt>Team</dt><dd>Solo project</dd></div>
+            </dl>
+          </div>
+        </details>
+      </div>
+
+      <section className="project-writeup project-writeup-desktop" aria-labelledby="observatory-writeup-title">
         <div className="project-writeup-inner">
           <h3 id="observatory-writeup-title">Description</h3>
 
@@ -220,7 +260,7 @@ export function ObservatoryProject() {
             >
               weekly learning logs
             </a>{" "}
-            where I've documented my learning progress, the struggles I faced and my
+            where I&apos;ve documented my learning progress, the struggles I faced and my
             thoughts on the project development.
           </p>
 
@@ -257,3 +297,4 @@ export function ObservatoryProject() {
     </article>
   );
 }
+
