@@ -18,9 +18,9 @@ export default function Home() {
           <div className="hero-copy">
             <h1>Wäinö Vänskä</h1>
             <p className="hero-intro">
-              I’m a <span className="text-accent">computer science student at Aalto University</span>{" "}
+              I’m a computer science student at Aalto University{" "}
               with an interest in <span className="text-accent">computer graphics</span> and{" "}
-              <span className="text-accent">building interactive software</span>.
+              <span className="text-accent">building user-friendly apps</span>.
             </p>
             <p className="eyebrow">
               <span className="live-dot" aria-hidden="true" />

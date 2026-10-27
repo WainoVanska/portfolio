@@ -54,13 +54,17 @@ export function SiteHeader() {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
         </button>
       </div>
-      <nav className="mobile-navigation shell" id="mobile-navigation" aria-label="Mobile navigation" hidden={!open}>
+      <div className="mobile-menu-panel shell" data-open={open}>
+        <div className="mobile-menu-clip">
+      <nav className="mobile-navigation" id="mobile-navigation" aria-label="Mobile navigation" aria-hidden={!open} inert={!open}>
         {sections.map(([href, label]) => (
           <a key={href} href={href} onClick={() => setOpen(false)}>{label}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg>
           </a>
         ))}
       </nav>
+        </div>
+      </div>
     </header>
   );
 }

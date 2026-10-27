@@ -90,13 +90,14 @@ Spacing should feel calm and deliberate. Avoid both cramped clusters and large e
 - Navigation labels stay short: Projects, Competencies, About.
 - Social links use recognizable icons with accessible names.
 - Hover and focus may shift color to green and move by at most a few pixels.
+- The mobile dropdown opens and closes with a restrained 180ms height transition, short fade and 4px movement. The menu button has subtle press feedback. Keep closed links inert and respect reduced motion.
 - Preserve the skip link and visible focus treatment.
 
 ## 6. Hero
 
 - The hero introduces Wäinö directly; it is not a marketing splash screen.
 - Keep the name, concise role statement, Helsinki location, single primary action, and portrait.
-- Green inline emphasis may highlight the university, graphics focus, and low-level programming.
+- In the introduction, highlight only “computer graphics” and “building user-friendly apps” in green; keep the education phrase muted.
 - The location indicator may use its subtle animated green signal.
 - The portrait stays compact and secondary to the introduction.
 - On smaller screens, the portrait moves above the copy and remains intentionally small.
