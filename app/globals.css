@@ -284,24 +284,20 @@ img {
   position: relative;
 }
 
-.is-decoding .decode-cell:not(.is-resolved) .decode-letter {
-  visibility: hidden;
+.is-decoding .decode-letter {
+  opacity: var(--decode-reveal, 0);
 }
 
-.is-decoding .decode-cell:not(.is-resolved)::after {
+.is-decoding .decode-cell::after {
   content: attr(data-digit);
   position: absolute;
   inset: 0;
   display: flex;
   justify-content: center;
   color: var(--accent);
-  opacity: 0.5;
+  opacity: calc(0.5 * var(--decode-presence, 0) * (1 - var(--decode-reveal, 0)));
   font-variant-numeric: tabular-nums;
   pointer-events: none;
-}
-
-.is-decoding .is-pending .decode-cell:not(.is-resolved)::after {
-  opacity: 0.15;
 }
 
 .decode-accessible {
@@ -321,11 +317,11 @@ img {
     visibility: visible;
   }
 
-  .is-decoding .decode-cell:not(.is-resolved) .decode-letter {
-    visibility: visible;
+  .is-decoding .decode-letter {
+    opacity: 1;
   }
 
-  .is-decoding .decode-cell:not(.is-resolved)::after {
+  .is-decoding .decode-cell::after {
     content: none;
   }
 }

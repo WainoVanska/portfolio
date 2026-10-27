@@ -61,22 +61,33 @@ export function HeroIntroduction() {
       intro!.classList.add("is-decoding");
       const startTime = performance.now();
       const sentenceStart = settings.nameDuration + settings.gap;
-      const total = sentenceStart + sentenceWords.length * settings.wordDuration;
+      const total = sentenceStart + (sentenceWords.length - 1) * settings.wordDuration + 240;
       let lastTick = -1;
+
+      function ease(value: number) {
+        const t = Math.max(0, Math.min(1, value));
+        return t * t * (3 - 2 * t);
+      }
+
+      function reveal(cell: HTMLElement, age: number, settle: number, fade: number) {
+        cell.style.setProperty("--decode-presence", String(ease(age / 100)));
+        cell.style.setProperty("--decode-reveal", String(ease((age - settle) / fade)));
+      }
 
       function draw(now: number) {
         if (disposed) return;
         const elapsed = now - startTime;
         const tick = Math.floor(elapsed / settings.refresh);
         nameCells.forEach((cell, index) => {
-          cell.classList.toggle("is-resolved", elapsed / settings.nameDuration >= (index + 1) / nameCells.length);
+          const enter = index / Math.max(1, nameCells.length - 1) * (settings.nameDuration - 300);
+          reveal(cell, elapsed - enter, 180, 120);
           if (tick !== lastTick) cell.dataset.digit = String((tick * 7 + index * 3 + Math.floor(tick / 3)) % 10);
         });
-        sentenceWords.forEach((word, index) => {
-          const progress = (elapsed - sentenceStart - index * settings.wordDuration) / settings.wordDuration;
-          word.classList.toggle("is-pending", progress < 0);
+        sentenceWords.forEach((_, index) => {
+          const wordStart = sentenceStart + index * settings.wordDuration;
           sentenceCells[index].forEach((cell, letter) => {
-            cell.classList.toggle("is-resolved", progress >= (letter + 1) / sentenceCells[index].length);
+            const enter = wordStart + letter / Math.max(1, sentenceCells[index].length - 1) * 40;
+            reveal(cell, elapsed - enter, 100, 100);
             if (tick !== lastTick) cell.dataset.digit = String((tick * 3 + index * 7 + letter * 9 + Math.floor(tick / 2)) % 10);
           });
         });
