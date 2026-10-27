@@ -18,9 +18,9 @@ export default function Home() {
           <div className="hero-copy">
             <h1>Wäinö Vänskä</h1>
             <p className="hero-intro">
-              I’m a computer science student at Aalto University{" "}
+              I’m a <span className="text-accent">computer science student at Aalto University</span>{" "}
               with an interest in <span className="text-accent">computer graphics</span> and{" "}
-              <span className="text-accent">building user-friendly apps</span>.
+              <span className="text-accent">building interactive software</span>.
             </p>
             <p className="eyebrow">
               <span className="live-dot" aria-hidden="true" />
@@ -38,7 +38,7 @@ export default function Home() {
               src="/media/waino-vanska.jpg"
               alt="Portrait of Wäinö Vänskä"
               fill
-              sizes="(max-width: 350px) 54px, (max-width: 820px) 64px, 280px"
+              sizes="(max-width: 820px) 160px, 280px"
               priority
               unoptimized
             />
@@ -87,7 +87,6 @@ export default function Home() {
                           {skill.wordmark}
                         </span>
                       )}
-                      <span className="skill-mobile-label" aria-hidden="true">{skill.name}</span>
                       <span className="skill-tooltip" aria-hidden="true">
                         {skill.label}
                       </span>
@@ -138,4 +137,3 @@ export default function Home() {
     </>
   );
 }
-
