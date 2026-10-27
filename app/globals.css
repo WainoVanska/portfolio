@@ -270,6 +270,10 @@ img {
 }
 
 /* Permanent cells reserve the exact same space throughout the intro. */
+.decode-awaiting > [aria-hidden="true"] {
+  visibility: hidden;
+}
+
 .decode-word {
   display: inline-block;
   white-space: nowrap;
@@ -313,6 +317,10 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce), print {
+  .decode-awaiting > [aria-hidden="true"] {
+    visibility: visible;
+  }
+
   .is-decoding .decode-cell:not(.is-resolved) .decode-letter {
     visibility: visible;
   }

@@ -47,12 +47,16 @@ export function HeroIntroduction() {
 
     function finish() {
       cancelAnimationFrame(frame);
-      heading!.classList.remove("is-decoding");
-      intro!.classList.remove("is-decoding");
+      heading!.classList.remove("is-decoding", "decode-awaiting");
+      intro!.classList.remove("is-decoding", "decode-awaiting");
     }
 
     function start() {
-      if (disposed || motion.matches) return;
+      if (disposed) return;
+      if (motion.matches) {
+        finish();
+        return;
+      }
       heading!.classList.add("is-decoding");
       intro!.classList.add("is-decoding");
       const startTime = performance.now();
@@ -80,7 +84,11 @@ export function HeroIntroduction() {
         if (elapsed < total) frame = requestAnimationFrame(draw);
         else finish();
       }
-      frame = requestAnimationFrame(draw);
+      // Set every cell to its first digit before exposing either text block.
+      // The server-rendered awaiting state prevents a flash before hydration.
+      draw(startTime);
+      heading!.classList.remove("decode-awaiting");
+      intro!.classList.remove("decode-awaiting");
     }
 
     function onMotionChange() {
@@ -91,21 +99,24 @@ export function HeroIntroduction() {
     motion.addEventListener("change", onMotionChange);
     return () => {
       disposed = true;
-      finish();
+      cancelAnimationFrame(frame);
       motion.removeEventListener("change", onMotionChange);
     };
   }, []);
 
   return (
     <>
-      <h1 ref={nameRef} aria-label={name}>
+      <noscript>
+        <style>{`.decode-awaiting > [aria-hidden="true"] { visibility: visible; }`}</style>
+      </noscript>
+      <h1 className="decode-awaiting" ref={nameRef} aria-label={name}>
         <span aria-hidden="true">
           {name.split(" ").map((word, index) => (
             <Fragment key={index}>{index > 0 ? " " : null}<TextWord text={word} /></Fragment>
           ))}
         </span>
       </h1>
-      <p className="hero-intro" ref={introRef}>
+      <p className="hero-intro decode-awaiting" ref={introRef}>
         <span className="decode-accessible">{introduction}</span>
         <span aria-hidden="true">
           {words.map((word, index) => (
