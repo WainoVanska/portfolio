@@ -288,19 +288,16 @@ img {
   opacity: var(--decode-reveal, 0);
 }
 
-.decode-cell[data-cursor]::after {
-  content: "";
+.is-decoding .decode-cell::after {
+  content: attr(data-digit);
   position: absolute;
-  top: 0.08em;
-  left: 100%;
-  width: max(2px, 0.05em);
-  height: 1em;
-  background: var(--accent);
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  color: var(--accent);
+  opacity: calc(0.5 * var(--decode-presence, 0) * (1 - var(--decode-reveal, 0)));
+  font-variant-numeric: tabular-nums;
   pointer-events: none;
-}
-
-.decode-cell[data-cursor="before"]::after {
-  left: 0;
 }
 
 .decode-accessible {
@@ -324,7 +321,7 @@ img {
     opacity: 1;
   }
 
-  .decode-cell[data-cursor]::after {
+  .is-decoding .decode-cell::after {
     content: none;
   }
 }
