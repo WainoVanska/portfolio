@@ -100,7 +100,7 @@ Spacing should feel calm and deliberate. Avoid both cramped clusters and large e
 - In the introduction, highlight only “computer graphics” and “building user-friendly apps” in green; keep the education phrase muted.
 - The location indicator may use its subtle animated green signal.
 - The portrait stays compact and secondary to the introduction.
-- On entry, the name resolves from green digits (0–9) over 1000ms. After 150ms, the introduction resolves word by word at 110ms per word, with letters resolving left to right within each word. Numbers gently emerge from left to right and crossfade into the finished letters; upcoming characters stay fully invisible. Digits change every 110ms at up to 50% green opacity. Word reveals overlap slightly so the entrance stays continuous. Play once per page load, keep the portrait static, and show the finished copy immediately for reduced motion. Keep the text cells in place when finished so there is no final layout snap.
+- On entry, the name types in over 1000ms. After 150ms, the introduction types in word by word at 110ms per word, with letters appearing left to right within each word. Each letter fades in briefly (120ms in the name, 100ms in the introduction); upcoming characters stay fully invisible. A thin green typing cursor follows the newest letter and disappears when typing ends. Word reveals overlap slightly so the entrance stays continuous. Play once per page load, keep the portrait static, and show the finished copy immediately for reduced motion. Keep the text cells in place when finished so there is no final layout snap.
 - On smaller screens, the portrait moves above the copy and remains intentionally small.
 - Keep the name and introduction visually hidden before the number reveal starts, with their space reserved. Initialize the digit state before showing them; never flash the finished text before hydration. Reduced-motion and JavaScript-disabled visitors see the finished copy directly.
 - Avoid adding extra CTAs, statistics, badges, slogans, or decorative background graphics without a clear request.
@@ -197,6 +197,16 @@ Current timing language:
 - Link/icon feedback: roughly 160ms
 - Poster-to-video crossfade: roughly 220ms
 - Project-description reveal: roughly 420ms with the established easing
+
+### Scroll reveal
+
+Later sections and the footer fade from transparent to opaque once, over 450ms, when their top passes 90% of the viewport height (`app/components/section-reveal.tsx`). Nothing slides or scales.
+
+Visitors never wait for motion:
+
+- An in-page link's target section appears without a fade.
+- A section that is already on screen, or that has moved quickly past the halfway point of the viewport, appears without a fade.
+- Under `prefers-reduced-motion`, nothing is hidden.
 
 Keep transforms subtle: approximately 1–3px for hover feedback. Do not add continuous decorative animation beyond restrained status-like details.
 

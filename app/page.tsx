@@ -3,6 +3,7 @@ import { HeroIntroduction } from "./components/hero-introduction";
 import { SiteHeader } from "./components/site-header";
 import { ObservatoryProject } from "./components/observatory-project";
 import { SectionLabel } from "./components/section-label";
+import { SectionReveal } from "./components/section-reveal";
 import { skillGroups } from "./data/skills";
 
 export default function Home() {
@@ -130,6 +131,8 @@ export default function Home() {
           Back to top <span aria-hidden="true">↑</span>
         </a>
       </footer>
+
+      <SectionReveal />
     </>
   );
 }
