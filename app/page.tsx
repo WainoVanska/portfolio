@@ -107,7 +107,7 @@ export default function Home() {
             </p>
 
             <p>
-              Outside of my studies, I enjoy bouldering, going to the gym, and learning Japanese.
+              Outside my studies and side projects, I enjoy bouldering, going to the gym, and learning Japanese.
             </p>
             {/*
               <p>
