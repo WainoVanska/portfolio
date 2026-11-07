@@ -135,7 +135,7 @@ export function ObservatoryProject() {
           <video
             ref={videoRef}
             className={`project-video${isPlaying ? " is-playing" : ""}`}
-            src="/media/planet_and_asteroids.mp4"
+            src="/media/observatory_showcase.mp4"
             poster="/media/observatory.png"
             muted
             loop
