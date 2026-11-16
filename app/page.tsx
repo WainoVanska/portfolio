@@ -2,6 +2,7 @@ import Image from "next/image";
 import { HeroIntroduction } from "./components/hero-introduction";
 import { SiteHeader } from "./components/site-header";
 import { ObservatoryProject } from "./components/observatory-project";
+import { KaruProject } from "./components/karu-project";
 import { SectionLabel } from "./components/section-label";
 import { SectionReveal } from "./components/section-reveal";
 import { skillGroups } from "./data/skills";
@@ -47,6 +48,7 @@ export default function Home() {
 
           <div className="project-grid">
             <ObservatoryProject />
+            <KaruProject />
           </div>
         </section>
 

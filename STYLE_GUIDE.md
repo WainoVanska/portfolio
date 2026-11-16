@@ -115,6 +115,7 @@ Projects are the visual focus of the portfolio.
 - Cards use a thin border, approximately 10px radius, and the panel background.
 - Project imagery or video fills the card with `object-fit: cover`.
 - The title and descriptive subtitle remain centered and visible before interaction.
+- Approved variation (2026-11-16, karu): when the media is an app screen whose own text would sit under a centered title, the title, subtitle and marks move to the left edge (`.project-card-corner`) and the clip keeps that side clear. A card without a link yet uses `.project-card-static` (default cursor, still focusable) and a muted "Demo soon" label instead of a repository mark.
 - Technology marks and the repository indicator remain visible near the bottom.
 - Technology marks should be recognizable and visually balanced, not presented as a row of heavy boxed badges.
 - The GitHub mark includes the small green external-link arrow to communicate that the card opens another site.
