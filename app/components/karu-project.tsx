@@ -117,7 +117,7 @@ export function KaruProject() {
     >
       <div
         ref={cardRef}
-        className="project-card project-card-static project-card-corner"
+        className="project-card project-card-static"
         tabIndex={0}
         role="group"
         aria-labelledby="karu-title"
