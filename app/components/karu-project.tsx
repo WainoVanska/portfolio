@@ -170,23 +170,34 @@ export function KaruProject() {
           <h3 id="karu-writeup-title">Description</h3>
 
           <p id="karu-summary">
-            karu is a Japanese vocabulary app that runs on the web and in a
-            Chrome side panel, with an Android version in progress. You study
-            one word at a time: guess, show the answer and rate it Again or
-            Good. An FSRS scheduler then decides when you see the word again.
+            karu is a Japanese vocabulary app for the web, a Chrome side panel
+            and Android (in progress). You study one word at a time: guess it,
+            show the answer and rate it Again or Good. An FSRS scheduler then
+            decides when the word comes back.
           </p>
 
           <p>
-            I designed the product and its architecture. Progress is saved on
-            the device first and synced to your account through Supabase, and
-            the website, the extension and the app share one study screen. I
-            didn&apos;t hand-write the TypeScript. I built karu by directing AI
-            coding tools; my part was writing the specifications and reviewing,
-            debugging and testing what they produced.
+            The words come from karu 5000, a deck I ranked by frequency in over
+            175 million words of subtitles, novels, web pages and social posts,
+            with meanings from JMdict and example sentences from Tatoeba. Its
+            first 1,500 words beat a widely recommended beginner deck of the
+            same size on every text I tested. A coverage view shows how much of
+            a Japanese article or video you&apos;d already understand.
+          </p>
+
+          <p>
+            I designed the product and its architecture, and built karu by
+            directing AI coding tools: I wrote the specifications, the tools
+            wrote the TypeScript, and I reviewed, debugged and tested what they
+            produced.
           </p>
 
           <div className="project-information">
             <dl>
+              <div>
+                <dt>Duration</dt>
+                <dd>July 2026 – present</dd>
+              </div>
               <div>
                 <dt>Role</dt>
                 <dd>Product design, architecture, review and testing</dd>
@@ -201,7 +212,7 @@ export function KaruProject() {
               </div>
               <div>
                 <dt>Content</dt>
-                <dd>karu 5000 deck from JMdict and Tatoeba</dd>
+                <dd>karu 5000: 5,000 words ranked by frequency (JMdict, Tatoeba)</dd>
               </div>
               <div>
                 <dt>Status</dt>
