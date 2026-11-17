@@ -104,7 +104,8 @@ export default function Home() {
               I’m studying <span className="text-accent">Computer Science at Aalto University</span>{" "}
               with a <span className="text-accent">minor in Mathematics</span>.
               I started in Information Technology and transferred to Computer
-              Science after the first year.
+              Science after the first year. Before programming, I spent my teens
+              and early twenties acting in TV and film and making my own music.
             </p>
 
             <p>
