@@ -534,7 +534,7 @@ img {
   line-height: 1;
 }
 
-/* A project card without a link yet (karu, until its public demo is live). */
+/* A project card without a link yet (none at the moment; karu links to its demo). */
 .project-card-static {
   cursor: default;
 }

@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { useEffect, useRef, useState, type FocusEvent } from "react";
 
-// Same card behaviour as The Observatory (see AGENTS.md interaction rules). The card is not a link yet:
-// the repository is private and the public demo is not live, so it is focusable to reveal the description.
+// Same card behaviour as The Observatory (see AGENTS.md interaction rules). The card links to the public guest
+// demo (the repository is private).
 export function KaruProject() {
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLAnchorElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -115,11 +115,12 @@ export function KaruProject() {
       onFocus={startVideo}
       onBlur={handleBlur}
     >
-      <div
+      <a
         ref={cardRef}
-        className="project-card project-card-static"
-        tabIndex={0}
-        role="group"
+        className="project-card"
+        href="https://karu-demo.vercel.app"
+        target="_blank"
+        rel="noreferrer"
         aria-labelledby="karu-title"
         aria-describedby="karu-summary"
       >
@@ -150,11 +151,19 @@ export function KaruProject() {
             <p className="project-subtitle">Japanese Vocabulary App</p>
           </div>
 
-          <div className="project-tools">
-            <span className="project-glsl-mark project-status">Demo soon</span>
+          <div className="project-tools" aria-label="Demo">
+            <span
+              className="project-glsl-mark project-repo"
+              role="img"
+              aria-label="Try the demo"
+              title="Try the demo"
+            >
+              Try the demo
+              <span className="external-link-arrow" aria-hidden="true">↗</span>
+            </span>
           </div>
         </div>
-      </div>
+      </a>
 
       <section className="project-writeup" aria-labelledby="karu-writeup-title">
         <div className="project-writeup-inner">
@@ -196,7 +205,7 @@ export function KaruProject() {
               </div>
               <div>
                 <dt>Status</dt>
-                <dd>In development, public demo coming soon</dd>
+                <dd>In development. Try it in the browser: no account, progress stays on your device.</dd>
               </div>
               <div>
                 <dt>Team</dt>
