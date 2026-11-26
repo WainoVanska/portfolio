@@ -174,26 +174,35 @@ export function KaruProject() {
           <h3 id="karu-writeup-title">Description</h3>
 
           <p id="karu-summary">
-            karu is a Japanese vocabulary app for the web, a Chrome side panel
-            and Android (in progress). You study one word at a time: guess it,
-            show the answer and rate it Again or Good. An FSRS scheduler then
-            decides when the word comes back.
+            Study one word at a time on the web, in a Chrome side panel or on
+            Android (in progress): guess the meaning, reveal it, rate it Again
+            or Good, and FSRS schedules the next review. It works offline and
+            syncs between devices.
           </p>
 
           <p>
-            The words come from karu 5000, a deck I ranked by frequency in over
-            175 million words of subtitles, novels, web pages and social posts,
-            with meanings from JMdict and example sentences from Tatoeba. Its
-            first 1,500 words beat a widely recommended beginner deck of the
-            same size on every text I tested. A coverage view shows how much of
-            a Japanese article or video you&apos;d already understand.
+            The karu 5000 deck is ranked by frequency in 175 million words of
+            subtitles, novels, web pages and social posts. On five texts it was
+            not built from (conversation, graded readers, social posts,
+            Wikipedia and literature), its first 1,500 words cover more of every
+            text than a popular beginner deck of the same size, from 73% vs 69%
+            on conversation to 50% vs 33% on Wikipedia. You can try the same
+            check on{" "}
+            <a
+              href="https://karu-demo.vercel.app/#coverage"
+              target="_blank"
+              rel="noreferrer"
+            >
+              a Japanese Wikipedia article in the demo
+            </a>
+            .
           </p>
 
           <p>
             I designed the product and its architecture, and built karu by
-            directing AI coding tools: I wrote the specifications, the tools
-            wrote the TypeScript, and I reviewed, debugged and tested what they
-            produced.
+            directing AI coding tools that wrote the code. Automated tests cover
+            scheduling, sync and Anki import, and I verified account isolation
+            and backup restores myself with SQL.
           </p>
 
           <div className="project-information">
