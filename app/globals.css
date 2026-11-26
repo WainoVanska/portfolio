@@ -448,6 +448,13 @@ img {
   filter: saturate(0.9) contrast(1.05);
 }
 
+/* karu's 4:5 phone poster (<= 620px): anchored high so the logo stays in view on wider 440px-tall cards. */
+@media (max-width: 620px) {
+  .karu-poster {
+    object-position: center 28%;
+  }
+}
+
 .project-video {
   opacity: 0;
   transition: opacity 220ms ease;

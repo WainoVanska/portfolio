@@ -114,6 +114,7 @@ Projects are the visual focus of the portfolio.
 - Desktop cards use a `16 / 10` aspect ratio.
 - Cards use a thin border, approximately 10px radius, and the panel background.
 - Project imagery or video fills the card with `object-fit: cover`.
+- A card may switch to a taller poster at the `620px` breakpoint, where cards become 440px tall, so its key content stays above the scrim (karu: a 4:5 title card, anchored at 28% so the logo stays in view up to 620px; owner decision 2026-11-26).
 - The title and descriptive subtitle sit bottom-left on a dark gradient scrim along the bottom of the media, visible before interaction (owner decision 2026-11-16, replacing the centered title, which covered app screens). Keep the middle and top of each clip free of overlays; frame clips so their key content sits above the scrim.
 - Technology marks and the repository indicator sit bottom-right on the same scrim. On narrow cards they stack below the subtitle.
 - A card without a link yet uses `.project-card-static` (default cursor, still focusable) and a muted "Demo soon" label instead of a repository mark.

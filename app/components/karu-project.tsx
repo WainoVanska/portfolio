@@ -125,19 +125,23 @@ export function KaruProject() {
         aria-describedby="karu-summary"
       >
         <div className="project-media" aria-hidden="true">
-          <Image
-            className="project-poster"
-            src="/media/karu.jpg"
-            alt=""
-            width={1280}
-            height={800}
-            unoptimized
-          />
+          {/* Laptop poster 16:10; up to 620px, where the card becomes 440px tall, the 4:5 phone poster. */}
+          <picture>
+            <source media="(max-width: 620px)" srcSet="/media/karu_poster_phone.jpg" />
+            <Image
+              className="project-poster karu-poster"
+              src="/media/karu_poster.jpg"
+              alt=""
+              width={1280}
+              height={800}
+              unoptimized
+            />
+          </picture>
           <video
             ref={videoRef}
             className={`project-video${isPlaying ? " is-playing" : ""}`}
             src="/media/karu_showcase.mp4"
-            poster="/media/karu.jpg"
+            poster="/media/karu_poster.jpg"
             muted
             loop
             playsInline
