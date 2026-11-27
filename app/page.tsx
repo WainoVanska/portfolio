@@ -111,27 +111,9 @@ export default function Home() {
       </main>
 
       <footer className="site-footer shell">
-        <div className="footer-main">
-          <div className="footer-contact">
-            <h2>Get in touch</h2>
-            <a className="footer-email" href="mailto:wainoka8@gmail.com">wainoka8@gmail.com</a>
-            <ul className="footer-links">
-              <li>
-                <a href="https://github.com/WainoVanska" target="_blank" rel="noreferrer">
-                  GitHub <span aria-hidden="true">↗</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/waino-vanska/" target="_blank" rel="noreferrer">
-                  LinkedIn <span aria-hidden="true">↗</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <AsciiW {...footerW.current} interactive={false} className="footer-mark" />
-        </div>
-        <div className="footer-meta">
-          <span>© 2026 Wäinö Vänskä</span>
+        <span>© 2026 Wäinö Vänskä</span>
+        <div className="footer-end">
+          <AsciiW {...footerW.current} interactive={false} />
           <a href="#top">
             Back to top <span aria-hidden="true">↑</span>
           </a>

@@ -820,94 +820,32 @@ img {
   transform: translate(-50%, 0);
 }
 
+/* One quiet bar, as before v2: copyright left; the small W and Back to top right. */
 .site-footer {
-  display: grid;
-  gap: 40px;
-  padding-top: 56px;
-  padding-bottom: 28px;
-  border-top: 1px solid var(--line-soft);
-  color: var(--quiet);
-  font-size: 0.75rem;
-}
-
-/* Contact on the left, the small W as a signature mark on the right. */
-.footer-main {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-}
-
-.footer-contact {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  min-width: 0;
-}
-
-.footer-contact h2 {
-  margin: 0;
-  color: var(--quiet);
-  font-size: 0.84rem;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-}
-
-.site-footer .footer-email {
-  color: var(--text);
-  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
-  letter-spacing: 0;
-  text-transform: none;
-  overflow-wrap: anywhere;
-  text-decoration: underline;
-  text-decoration-color: var(--line);
-  text-underline-offset: 6px;
-  transition: color 160ms ease, text-decoration-color 160ms ease;
-}
-
-.site-footer .footer-email:hover,
-.site-footer .footer-email:focus-visible {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 24px;
-  margin: 4px 0 0;
-  padding: 0;
-  list-style: none;
-  font-size: 0.78rem;
-}
-
-.footer-links a {
-  display: inline-block;
-  padding: 6px 0;
-  color: var(--muted);
-}
-
-.footer-links a span {
-  color: var(--accent);
-}
-
-.footer-mark {
-  flex: 0 0 auto;
-}
-
-/* Quiet bottom bar: copyright left, back to top right. */
-.footer-meta {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding-top: 20px;
+  padding-top: 22px;
+  padding-bottom: 26px;
   border-top: 1px solid var(--line-soft);
+  color: var(--quiet);
+  font-size: 0.72rem;
   white-space: nowrap;
 }
 
-.footer-meta a {
+.footer-end {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* The W box sizes itself from its container; give it a fixed basis in this shrink-wrapped row. */
+.footer-end .ascii-w {
+  flex: 0 0 80px;
+}
+
+.site-footer a {
   padding: 6px 0;
 }
 
@@ -1127,16 +1065,23 @@ html[data-intro="on"] .intro-overlay {
     width: 100%;
   }
 
-  .footer-main {
-    align-items: flex-start;
+  .site-footer {
+    font-size: 0.69rem;
   }
 
-  .footer-meta {
-    font-size: 0.69rem;
+  .footer-end {
+    gap: 12px;
   }
 
   .skill-groups {
     row-gap: 30px;
+  }
+}
+
+/* Narrow phones: the bar can't fit the small W beside both labels, so it steps aside. */
+@media (max-width: 420px) {
+  .footer-end .ascii-w {
+    display: none;
   }
 }
 
