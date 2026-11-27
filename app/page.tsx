@@ -1,5 +1,9 @@
 import Image from "next/image";
+import { AsciiW } from "./components/ascii-w";
+import { footerW } from "./components/w-looks";
 import { HeroIntroduction } from "./components/hero-introduction";
+import { IntroOverlay } from "./components/intro-overlay";
+import { INTRO_ENABLED } from "./components/intro-state";
 import { SiteHeader } from "./components/site-header";
 import { ObservatoryProject } from "./components/observatory-project";
 import { KaruProject } from "./components/karu-project";
@@ -14,33 +18,12 @@ export default function Home() {
         Skip to content
       </a>
 
+      {INTRO_ENABLED ? <IntroOverlay /> : null}
       <SiteHeader />
 
       <main id="main-content">
         <section className="hero shell" id="top">
-          <div className="hero-copy">
-            <HeroIntroduction />
-            <p className="eyebrow">
-              <span className="live-dot" aria-hidden="true" />
-              Helsinki, Finland
-            </p>
-            <div className="hero-actions" aria-label="Primary actions">
-              <a className="button button-primary" href="#projects">
-                View projects <span aria-hidden="true">↓</span>
-              </a>
-            </div>
-          </div>
-
-          <figure className="hero-portrait">
-            <Image
-              src="/media/waino-vanska.jpg"
-              alt="Portrait of Wäinö Vänskä"
-              fill
-              sizes="(max-width: 820px) 160px, 280px"
-              priority
-              unoptimized
-            />
-          </figure>
+          <HeroIntroduction />
         </section>
 
         <section className="projects shell section" id="projects">
@@ -128,10 +111,13 @@ export default function Home() {
       </main>
 
       <footer className="site-footer shell">
-        <span>Wäinö Vänskä · 2026</span>
-        <a href="#top">
-          Back to top <span aria-hidden="true">↑</span>
-        </a>
+        <span>© 2026 Wäinö Vänskä</span>
+        <div className="footer-end">
+          <AsciiW {...footerW.current} interactive={false} />
+          <a href="#top">
+            Back to top <span aria-hidden="true">↑</span>
+          </a>
+        </div>
       </footer>
 
       <SectionReveal />

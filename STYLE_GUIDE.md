@@ -239,3 +239,15 @@ When adding a new section or component:
 6. Update this guide when an approved decision becomes a reusable rule.
 
 A redesign, new theme, new site architecture, or materially different interaction pattern requires explicit user direction. Ordinary additions should look as though they were always part of this portfolio.
+
+## 13. v2 preview (branch `v2`, owner-approved designs, 2026-11-27)
+
+These rules apply on the `v2` branch and replace the matching rules above once v2 ships:
+
+- Tokens: `--bg` `#0b0d0c`, `--accent` `#72d572` (original green kept), `--muted` `#9aa39d`. `--font-mono` is JetBrains Mono (UI, headings, hero name); `--font-sans` is Inter (hero introduction, About). Projects and Competencies keep `--display-tech`.
+- Header: WV left; section links and GitHub/LinkedIn icons together on the right.
+- Intro overlay: built but switched off (`INTRO_ENABLED` in `app/components/intro-state.ts`) so visitors see the hero at once; the hero entrance is the intro. When on: a green ASCII W assembles (~1.4 s) with "INITIALISING ▌" and "SKIP →", hides after ~2.6 s, once per browser session, never under reduced motion or without JavaScript.
+- Hero entry order: green dot, "Helsinki, Finland" scramble, name, then the introduction and action. The portrait is replaced by the rotating ASCII W (`app/components/ascii-w.tsx`), which assembles after the name.
+- ASCII W: DOM text in a `<pre>`, one flat accent green, no glow or gradients, ~25 fps, paused off-screen, one static frame under reduced motion. Only the W, never a WV monogram.
+- Footer: one quiet bar like the original: "© 2026 Wäinö Vänskä" on the left; the small non-interactive W (80×60 at 4px) and "Back to top ↑" on the right (the W hides below 420px). Contact links live in the header.
+- W configurations live in `app/components/w-looks.ts`: `current` is used on the site, earlier looks are kept as `v1` (and `bold` for the footer) to switch back in one line.
