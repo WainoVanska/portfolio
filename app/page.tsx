@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { AsciiW } from "./components/ascii-w";
 import { HeroIntroduction } from "./components/hero-introduction";
+import { IntroOverlay } from "./components/intro-overlay";
 import { SiteHeader } from "./components/site-header";
 import { ObservatoryProject } from "./components/observatory-project";
 import { KaruProject } from "./components/karu-project";
@@ -14,33 +16,12 @@ export default function Home() {
         Skip to content
       </a>
 
+      <IntroOverlay />
       <SiteHeader />
 
       <main id="main-content">
         <section className="hero shell" id="top">
-          <div className="hero-copy">
-            <HeroIntroduction />
-            <p className="eyebrow">
-              <span className="live-dot" aria-hidden="true" />
-              Helsinki, Finland
-            </p>
-            <div className="hero-actions" aria-label="Primary actions">
-              <a className="button button-primary" href="#projects">
-                View projects <span aria-hidden="true">↓</span>
-              </a>
-            </div>
-          </div>
-
-          <figure className="hero-portrait">
-            <Image
-              src="/media/waino-vanska.jpg"
-              alt="Portrait of Wäinö Vänskä"
-              fill
-              sizes="(max-width: 820px) 160px, 280px"
-              priority
-              unoptimized
-            />
-          </figure>
+          <HeroIntroduction />
         </section>
 
         <section className="projects shell section" id="projects">
@@ -128,10 +109,25 @@ export default function Home() {
       </main>
 
       <footer className="site-footer shell">
-        <span>Wäinö Vänskä · 2026</span>
-        <a href="#top">
-          Back to top <span aria-hidden="true">↑</span>
-        </a>
+        <div className="footer-contact">
+          <h2>Get in touch</h2>
+          <ul className="footer-links">
+            <li>
+              {/* PLACEHOLDER: replace with the real address before v2 goes live. */}
+              <a href="mailto:EMAIL-PLACEHOLDER@example.com">[Email placeholder]</a>
+            </li>
+            <li>
+              <a href="https://github.com/WainoVanska" target="_blank" rel="noreferrer">GitHub</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/waino-vanska/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </li>
+          </ul>
+        </div>
+        <div className="footer-signature">
+          <span>© 2026 Wäinö Vänskä</span>
+          <AsciiW width={150} height={110} fontSize={6} speed={0.6} />
+        </div>
       </footer>
 
       <SectionReveal />
