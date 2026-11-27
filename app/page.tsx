@@ -126,7 +126,13 @@ export default function Home() {
         </div>
         <div className="footer-signature">
           <span>© 2026 Wäinö Vänskä</span>
-          <AsciiW width={150} height={110} fontSize={6} speed={0.6} />
+          <AsciiW
+            width={150}
+            height={110}
+            fontSize={6}
+            speed={0.6}
+            look={{ fill: 1.6, thickness: 0.16, tilt: 0.3, weight: 700 }}
+          />
         </div>
       </footer>
 

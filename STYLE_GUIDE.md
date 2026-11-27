@@ -244,9 +244,9 @@ A redesign, new theme, new site architecture, or materially different interactio
 
 These rules apply on the `v2` branch and replace the matching rules above once v2 ships:
 
-- Tokens: `--bg` `#0b0d0c`, `--accent` `#86E89A`, `--muted` `#9aa39d`. `--font-mono` is JetBrains Mono (UI, headings, hero name); `--font-sans` is Inter (hero introduction, About). Projects and Competencies keep `--display-tech`.
+- Tokens: `--bg` `#0b0d0c`, `--accent` `#72d572` (original green kept), `--muted` `#9aa39d`. `--font-mono` is JetBrains Mono (UI, headings, hero name); `--font-sans` is Inter (hero introduction, About). Projects and Competencies keep `--display-tech`.
 - Header: WV left; section links and GitHub/LinkedIn icons together on the right.
 - Intro overlay: a green ASCII W assembles (~1.4 s) with "INITIALISING ▌" and "SKIP →"; hides after ~2.6 s, Escape or Skip. Once per browser session; never under reduced motion or without JavaScript.
 - Hero entry order: green dot, "Helsinki, Finland" scramble, name, then the introduction and action. The portrait is replaced by the rotating ASCII W (`app/components/ascii-w.tsx`), which assembles after the name.
-- ASCII W: DOM text in a `<pre>`, one flat `#86E89A`, no glow or gradients, ~25 fps, paused off-screen, one static frame under reduced motion. Only the W, never a WV monogram.
-- Footer: "Get in touch" with email, GitHub and LinkedIn on the left; "© 2026 Wäinö Vänskä" and a 150×110 W at 6px on the right.
+- ASCII W: DOM text in a `<pre>`, one flat accent green, no glow or gradients, ~25 fps, paused off-screen, one static frame under reduced motion. Only the W, never a WV monogram.
+- Footer: "Get in touch" with email, GitHub and LinkedIn on the left; "© 2026 Wäinö Vänskä" and a 150×110 W at 6px on the right, drawn larger in its box with thicker bold strokes and less tilt so it reads clearly at that size (`look` prop).

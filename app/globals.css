@@ -8,9 +8,9 @@
   --text: #f1f4ef;
   --muted: #9aa39d;
   --quiet: #6f786f;
-  --accent: #86e89a;
-  --accent-strong: #86e89a;
-  --accent-rgb: 134, 232, 154;
+  --accent: #72d572;
+  --accent-strong: #72d572;
+  --accent-rgb: 114, 213, 114;
   --shell: min(1180px, calc(100vw - 48px));
   --font-sans: Inter, "IBM Plex Sans", Aptos, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
@@ -902,7 +902,7 @@ img {
 
 .ascii-w pre {
   margin: 0;
-  color: #86e89a;
+  color: var(--accent);
   font-family: "JetBrains Mono", ui-monospace, monospace;
   letter-spacing: 0;
   white-space: pre;

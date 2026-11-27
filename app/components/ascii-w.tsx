@@ -5,13 +5,50 @@ import { useEffect, useRef } from "react";
 // A solid extruded W rendered as lit ASCII text in a <pre>, like a tiny
 // software rasteriser: sample the surface, rotate, project, z-buffer, shade.
 
-const RAMP = ".,-~:;=!*#$@";
 const CELL_WIDTH = 0.6; // JetBrains Mono advance width per em
-const CAMERA_DISTANCE = 5;
 const FRAME_MS = 40; // ~25 fps
 const ASSEMBLE_MS = 1400;
 const IDLE_SPIN = 0.9; // rad/s
-const BASE_TILT = 0.38; // rad around x
+
+/** Look of the W. Every field is optional; defaults are the approved first version. */
+export type AsciiWLook = {
+  /** Characters from darkest to brightest. */
+  ramp?: string;
+  /** Character for surfaces facing away from the light. */
+  shadowChar?: string;
+  /** Base tilt around x, in radians. */
+  tilt?: number;
+  /** Half-width of each bar of the W (stroke thickness). */
+  thickness?: number;
+  /** Half-depth of the extrusion. */
+  depth?: number;
+  /** How much of the box the W fills (0.9 = 90%). */
+  fill?: number;
+  /** Camera distance; smaller = stronger perspective. */
+  camera?: number;
+  /** Light direction, normalised internally. */
+  light?: [number, number, number];
+  /** Shift the shading up (+) or down (-) the ramp, -1..1. */
+  brightness?: number;
+  /** Text colour; empty uses the site accent. */
+  color?: string;
+  /** Font weight of the characters. */
+  weight?: number;
+};
+
+export const defaultLook: Required<AsciiWLook> = {
+  ramp: ".,-~:;=!*#$@",
+  shadowChar: ".",
+  tilt: 0.38,
+  thickness: 0.13,
+  depth: 0.22,
+  fill: 0.9,
+  camera: 5,
+  light: [0, 0.7071, -0.7071],
+  brightness: 0,
+  color: "",
+  weight: 400,
+};
 
 type AsciiWProps = {
   /** Maximum box width in px; the box shrinks with its container. */
@@ -30,12 +67,12 @@ type AsciiWProps = {
   /** Accessible label; without one the W is decorative (aria-hidden). */
   label?: string;
   className?: string;
+  /** Optional look overrides (see AsciiWLook). */
+  look?: AsciiWLook;
 };
 
-function buildPoints(step: number) {
+function buildPoints(step: number, hw: number, depth: number) {
   const k = 0.9;
-  const hw = 0.13;
-  const depth = 0.22;
   const path = [[-1.2, 0.9], [-0.6, -0.9], [0, 0.45], [0.6, -0.9], [1.2, 0.9]];
   const pts: number[] = [];
   for (let i = 0; i < 4; i++) {
@@ -77,7 +114,11 @@ export function AsciiW({
   start = true,
   label,
   className,
+  look,
 }: AsciiWProps) {
+  const L = { ...defaultLook, ...look };
+  // A stable key so the effect only restarts when the look really changes.
+  const lookKey = JSON.stringify(L);
   const boxRef = useRef<HTMLDivElement>(null);
   const preRef = useRef<HTMLPreElement>(null);
 
@@ -85,6 +126,10 @@ export function AsciiW({
     const box = boxRef.current;
     const pre = preRef.current;
     if (!box || !pre || !start) return;
+    const cfg: Required<AsciiWLook> = JSON.parse(lookKey);
+    const RAMP = cfg.ramp.length > 0 ? cfg.ramp : defaultLook.ramp;
+    const lightLen = Math.hypot(...cfg.light) || 1;
+    const [lx, ly, lz] = cfg.light.map((v) => v / lightLen);
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const canInteract = interactive && !reduce;
@@ -107,11 +152,11 @@ export function AsciiW({
       const w = box!.clientWidth, h = box!.clientHeight;
       cols = Math.max(1, Math.floor(w / (fontSize * CELL_WIDTH)));
       rows = Math.max(1, Math.floor(h / fontSize));
-      scale = 0.9 * Math.min(cols / (2 * 0.37 * aspect), rows / (2 * 0.38));
+      scale = cfg.fill * (cfg.camera / 5) * Math.min(cols / (2 * 0.37 * aspect), rows / (2 * 0.38));
       zbuf = new Float32Array(cols * rows);
       lum = new Float32Array(cols * rows);
       const step = Math.min(2 / (scale * aspect), 2.5 / scale, 0.05);
-      pts = buildPoints(step);
+      pts = buildPoints(step, cfg.thickness, cfg.depth);
     }
 
     function draw(now: number) {
@@ -124,7 +169,7 @@ export function AsciiW({
       tiltX += (targetX - tiltX) * 0.08;
       tiltY += (targetY - tiltY) * 0.08;
 
-      const pitch = BASE_TILT + tiltY;
+      const pitch = cfg.tilt + tiltY;
       const ry = yaw + tiltX;
       const cY = Math.cos(ry), sY = Math.sin(ry);
       const cP = Math.cos(pitch), sP = Math.sin(pitch);
@@ -137,7 +182,7 @@ export function AsciiW({
         // Rotate around y, then tilt around x.
         const x1 = x * cY + z * sY, z1 = -x * sY + z * cY;
         const y2 = y * cP - z1 * sP, z2 = y * sP + z1 * cP;
-        const ooz = 1 / (z2 + CAMERA_DISTANCE);
+        const ooz = 1 / (z2 + cfg.camera);
         const px = (hx + scale * x1 * ooz * aspect) | 0;
         const py = (hy - scale * y2 * ooz) | 0;
         if (px < 0 || px >= cols || py < 0 || py >= rows) continue;
@@ -145,11 +190,11 @@ export function AsciiW({
         if (ooz <= zbuf[i]) continue;
         zbuf[i] = ooz;
         const nx = pts[p + 3], ny = pts[p + 4], nz = pts[p + 5];
-        const nz1 = -nx * sY + nz * cY;
+        const nx1 = nx * cY + nz * sY, nz1 = -nx * sY + nz * cY;
         const ny2 = ny * cP - nz1 * sP, nz2 = ny * sP + nz1 * cP;
-        // Single light: L = n · (0, 0.7071, -0.7071).
-        const l = ny2 * 0.7071 - nz2 * 0.7071;
-        lum[i] = l > 0 ? Math.min(1, l) : 0;
+        // Single light: L = n · light (default (0, 0.7071, -0.7071)).
+        const l = nx1 * lx + ny2 * ly + nz2 * lz;
+        lum[i] = l > 0 ? Math.min(1, Math.max(0.001, l + cfg.brightness)) : 0;
       }
 
       const progress = assemble && !reduce ? Math.min(1, (now - startTime) / ASSEMBLE_MS) : 1;
@@ -161,7 +206,7 @@ export function AsciiW({
           const l = lum[j];
           let ch = " ";
           if (l >= 0) {
-            ch = l > 0 ? RAMP[Math.min(R - 1, Math.floor(l * R))] : ".";
+            ch = l > 0 ? RAMP[Math.min(R - 1, Math.floor(l * R))] : cfg.shadowChar;
             if (progress < 1) {
               const h = hash(j);
               if (h > progress + 0.25) ch = " ";
@@ -254,7 +299,7 @@ export function AsciiW({
       box.removeEventListener("pointercancel", onUp);
       box.removeEventListener("pointerleave", onLeave);
     };
-  }, [start, assemble, interactive, speed, fontSize]);
+  }, [start, assemble, interactive, speed, fontSize, lookKey]);
 
   return (
     <div
@@ -263,7 +308,7 @@ export function AsciiW({
       style={{ width: `min(100%, ${width}px)`, aspectRatio: `${width} / ${height}` }}
       {...(label ? { role: "img", "aria-label": label } : { "aria-hidden": true })}
     >
-      <pre ref={preRef} style={{ fontSize, lineHeight: `${fontSize}px` }} />
+      <pre ref={preRef} style={{ fontSize, lineHeight: `${fontSize}px`, color: L.color || undefined, fontWeight: L.weight }} />
     </div>
   );
 }
