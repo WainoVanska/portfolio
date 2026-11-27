@@ -246,7 +246,7 @@ These rules apply on the `v2` branch and replace the matching rules above once v
 
 - Tokens: `--bg` `#0b0d0c`, `--accent` `#72d572` (original green kept), `--muted` `#9aa39d`. `--font-mono` is JetBrains Mono (UI, headings, hero name); `--font-sans` is Inter (hero introduction, About). Projects and Competencies keep `--display-tech`.
 - Header: WV left; section links and GitHub/LinkedIn icons together on the right.
-- Intro overlay: a green ASCII W assembles (~1.4 s) with "INITIALISING ▌" and "SKIP →"; hides after ~2.6 s, Escape or Skip. Once per browser session; never under reduced motion or without JavaScript.
+- Intro overlay: built but switched off (`INTRO_ENABLED` in `app/components/intro-state.ts`) so visitors see the hero at once; the hero entrance is the intro. When on: a green ASCII W assembles (~1.4 s) with "INITIALISING ▌" and "SKIP →", hides after ~2.6 s, once per browser session, never under reduced motion or without JavaScript.
 - Hero entry order: green dot, "Helsinki, Finland" scramble, name, then the introduction and action. The portrait is replaced by the rotating ASCII W (`app/components/ascii-w.tsx`), which assembles after the name.
 - ASCII W: DOM text in a `<pre>`, one flat accent green, no glow or gradients, ~25 fps, paused off-screen, one static frame under reduced motion. Only the W, never a WV monogram.
 - Footer: two tiers. Top: a small "Get in touch" label, the email large as the primary action, GitHub and LinkedIn as small external links, and the small non-interactive W (80×60 at 4px) on the right as a signature mark. Bottom: a hairline bar with "© 2026 Wäinö Vänskä" left and "Back to top ↑" right, each on one line.

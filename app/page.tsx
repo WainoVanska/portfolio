@@ -3,6 +3,7 @@ import { AsciiW } from "./components/ascii-w";
 import { footerW } from "./components/w-looks";
 import { HeroIntroduction } from "./components/hero-introduction";
 import { IntroOverlay } from "./components/intro-overlay";
+import { INTRO_ENABLED } from "./components/intro-state";
 import { SiteHeader } from "./components/site-header";
 import { ObservatoryProject } from "./components/observatory-project";
 import { KaruProject } from "./components/karu-project";
@@ -17,7 +18,7 @@ export default function Home() {
         Skip to content
       </a>
 
-      <IntroOverlay />
+      {INTRO_ENABLED ? <IntroOverlay /> : null}
       <SiteHeader />
 
       <main id="main-content">
