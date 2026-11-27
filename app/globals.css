@@ -170,7 +170,7 @@ img {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 560px);
+  grid-template-columns: minmax(min(480px, 100%), 1fr) minmax(280px, 700px);
   align-items: center;
   gap: clamp(44px, 7vw, 88px);
   min-height: calc(100svh - 80px);
@@ -878,7 +878,7 @@ img {
 }
 
 .footer-signature .ascii-w {
-  flex: 0 0 150px;
+  flex: 0 0 auto;
 }
 
 /* ASCII W (ascii-w.tsx): plain DOM text, one flat colour, no glow. */

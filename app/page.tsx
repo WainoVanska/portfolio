@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { AsciiW } from "./components/ascii-w";
+import { footerW } from "./components/w-looks";
 import { HeroIntroduction } from "./components/hero-introduction";
 import { IntroOverlay } from "./components/intro-overlay";
 import { SiteHeader } from "./components/site-header";
@@ -126,13 +127,7 @@ export default function Home() {
         </div>
         <div className="footer-signature">
           <span>© 2026 Wäinö Vänskä</span>
-          <AsciiW
-            width={150}
-            height={110}
-            fontSize={6}
-            speed={0.6}
-            look={{ fill: 1.6, thickness: 0.16, tilt: 0.3, weight: 700 }}
-          />
+          <AsciiW {...footerW.current} interactive={false} />
         </div>
       </footer>
 

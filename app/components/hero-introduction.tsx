@@ -2,6 +2,7 @@
 
 import { Fragment, useEffect, useRef, useState } from "react";
 import { AsciiW } from "./ascii-w";
+import { heroW } from "./w-looks";
 import { whenIntroDone } from "./intro-state";
 
 const name = "Wäinö Vänskä";
@@ -216,9 +217,7 @@ export function HeroIntroduction() {
 
       <div className="hero-w">
         <AsciiW
-          width={560}
-          height={440}
-          fontSize={10}
+          {...heroW.current}
           assemble
           start={showW}
           label="A rotating letter W drawn live in green ASCII characters"

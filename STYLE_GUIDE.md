@@ -249,4 +249,5 @@ These rules apply on the `v2` branch and replace the matching rules above once v
 - Intro overlay: a green ASCII W assembles (~1.4 s) with "INITIALISING ▌" and "SKIP →"; hides after ~2.6 s, Escape or Skip. Once per browser session; never under reduced motion or without JavaScript.
 - Hero entry order: green dot, "Helsinki, Finland" scramble, name, then the introduction and action. The portrait is replaced by the rotating ASCII W (`app/components/ascii-w.tsx`), which assembles after the name.
 - ASCII W: DOM text in a `<pre>`, one flat accent green, no glow or gradients, ~25 fps, paused off-screen, one static frame under reduced motion. Only the W, never a WV monogram.
-- Footer: "Get in touch" with email, GitHub and LinkedIn on the left; "© 2026 Wäinö Vänskä" and a 150×110 W at 6px on the right, drawn larger in its box with thicker bold strokes and less tilt so it reads clearly at that size (`look` prop).
+- Footer: "Get in touch" with email, GitHub and LinkedIn on the left; "© 2026 Wäinö Vänskä" and a small W (80×60 at 4px) on the right.
+- W configurations live in `app/components/w-looks.ts`: `current` is used on the site, earlier looks are kept as `v1` (and `bold` for the footer) to switch back in one line.
