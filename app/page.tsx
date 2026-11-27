@@ -114,8 +114,7 @@ export default function Home() {
           <h2>Get in touch</h2>
           <ul className="footer-links">
             <li>
-              {/* PLACEHOLDER: replace with the real address before v2 goes live. */}
-              <a href="mailto:EMAIL-PLACEHOLDER@example.com">[Email placeholder]</a>
+              <a className="footer-email" href="mailto:wainoka8@gmail.com">wainoka8@gmail.com</a>
             </li>
             <li>
               <a href="https://github.com/WainoVanska" target="_blank" rel="noreferrer">GitHub</a>
@@ -126,8 +125,11 @@ export default function Home() {
           </ul>
         </div>
         <div className="footer-signature">
-          <span>© 2026 Wäinö Vänskä</span>
+          <span className="footer-copyright">© 2026 Wäinö Vänskä</span>
           <AsciiW {...footerW.current} interactive={false} />
+          <a className="footer-top" href="#top">
+            Back to top <span aria-hidden="true">↑</span>
+          </a>
         </div>
       </footer>
 
